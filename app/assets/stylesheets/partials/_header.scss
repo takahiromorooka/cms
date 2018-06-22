@@ -1,0 +1,35 @@
+.header {
+  .navbar-inverse {
+    background-color: #fff;
+    border-color: $borderColor;
+    .navbar-toggle {
+      border: none;
+      &:focus, &:hover {
+        background-color: #fff;
+      }
+      .icon-bar {
+        background-color: $fontGrayColor;
+      }
+    }
+    .navbar-nav {
+      li {
+        a {
+          color: $fontGrayColor;
+          &:hover {
+            color: $fontBlackColor;
+            transition: 0.2s;
+          }
+        }
+      }
+    }
+  }
+  .navbar-brand {
+    img {
+      height: 30px;
+      margin-top: -5px;
+    }
+  }
+  .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border: none;
+  }
+}

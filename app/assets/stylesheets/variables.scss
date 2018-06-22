@@ -1,0 +1,18 @@
+$mainColor: #00B5F1;
+$subColor: #F1CB16;
+$alertColor: #FF1584;
+
+$borderColor: #DCDCDC;
+
+$bgGrayColor: #EFEFEF;
+
+$fontBlackColor: #333333;
+$fontGrayColor: #999999;
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px
+) !default;
