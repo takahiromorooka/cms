@@ -13,6 +13,10 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'slim-rails'
+gem 'ridgepole'
+gem 'active_model_serializers'
+gem 'mini_magick'
+gem 'carrierwave', '~> 1.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri

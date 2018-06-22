@@ -49,6 +49,12 @@
 .text-title {
   font-size: 32px;
   margin-bottom: 20px;
+  color: $fontMainColor;
+
+  &:before{
+    content: '> ';
+    color: $fontMainColor;
+  }
   @media (max-width: 767px) {
     font-size: 24px;
   }

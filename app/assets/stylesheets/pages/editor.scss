@@ -1,5 +1,14 @@
-.editor-preview {
-  height: 100%;
-  background-color: #fff;
-  color: #000;
+.editor {
+
+  .editor-form {
+    height: 100%;
+  }
+
+  .editor-preview {
+    height: 100vh;
+    background-color: #fff;
+    color: #000;
+  }
 }
+
+

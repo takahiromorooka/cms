@@ -5,14 +5,18 @@ import reactRenderer from "remark-react";
 
 class EditorPreview extends React.Component {
     constructor(props) {
-        super (props)
+        super(props)
     }
-
 
     render() {
         return (
             <div className='editor-preview'>
-                {remark().use(reactRenderer).processSync(this.props.text).contents}
+                <div key='preview-title'>
+                    {remark().use(reactRenderer).processSync(this.props.title).contents}
+                </div>
+                <div key='preview-content'>
+                    {remark().use(reactRenderer).processSync(this.props.content).contents}
+                </div>
             </div>
         )
     }
