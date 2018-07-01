@@ -13,7 +13,8 @@ class Editor extends React.Component {
             title: '',
             content: '',
             description: '',
-            thumbnail: ''
+            thumbnail: '',
+            image_src: ''
         }
     }
 
@@ -38,20 +39,34 @@ class Editor extends React.Component {
     }
 
     setStateThumbnail(thumbnail) {
+        const createObjectURL = (window.URL || window.webkitURL).createObjectURL || window.createObjectURL;
+
         this.setState({
-            thumbnail: thumbnail
+            thumbnail: thumbnail,
+            image_src: createObjectURL(thumbnail[0])
         })
+
     }
 
     onSubmit(e) {
         e.preventDefault()
-        console.log(this.state.thumbnail)
 
+               // const form = $('#editor-form').get()[0];
+        // console.log(form)
+        // form.append()
+
+        // FormData オブジェクトを作成
+        const formData = new FormData();
+        formData.append('file', this.state.thumbnail[0])
+        console.log(formData.get('file'))
+
+
+        const createObjectURL = (window.URL || window.webkitURL).createObjectURL || window.createObjectURL;
         const params = {
             title: this.state.title,
             content: this.state.content,
             description: this.state.description,
-            thumbnail: this.state.thumbnail
+            thumbnail: this.state.thumbnail[0]
         }
         console.log(params)
 
@@ -70,10 +85,11 @@ class Editor extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={(e) => this.onSubmit(e)} encType="multipart/form-data" acceptCharset="UTF-8" >
+                <form id='editor-form' onSubmit={(e) => this.onSubmit(e)} encType="multipart/form-data" acceptCharset="UTF-8" >
                     <div className='editor'>
                         <EditorHeader setStateTitle={(value) => this.setStateTitle(value)}
                                       setStateThumbnail={(value) => this.setStateThumbnail(value)}/>
+                        {/*<img src={this.state.image_src} />*/}
                         <hr/>
                         <div className='row'>
                             <div className='col-md-6'>
