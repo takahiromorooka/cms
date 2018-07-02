@@ -1,0 +1,14 @@
+.topic-list-01
+  .card
+    .topic-thumbnail
+      = topic_image_helper(topic)
+      .topic-category
+        .tag.tag-sub
+          | category
+    .topic-content
+      .topic-title
+        = topic.title
+      .text-right
+        .topic-status.tag.tag-main
+          = topic_status_name_helper(topic.status)
+

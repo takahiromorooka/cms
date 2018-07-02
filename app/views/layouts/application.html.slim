@@ -29,14 +29,10 @@ html lang="ja"
           .col-sm-3.col-md-2.sidebar.sidebar-border
             ul.nav.nav-sidebar
               li.active
-                a href="#"
-                  | Overview
-                  span.sr-only (current)
+                = link_to 'topic new', new_topic_path
               li
-                a href="#"  Reports
+                = link_to 'topic index', root_path
               li
-                a href="#"  Analytics
-              li
-                a href="#"  Export
+                a href="#"  Category
           .col-sm-9.col-md-10
             = yield

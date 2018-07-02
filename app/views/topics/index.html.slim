@@ -1,1 +1,28 @@
+section
+  .text-title Search
+  = form_for @topic_form, url: topics_path, method: :get  do |f|
+    .row
+      .col-md-6
+        .form-group
+          = f.label :title, class: 'text-title'
+          = f.text_field :title, class: 'form-control form-color-main'
+      .col-md-3
+        .form-group
+          = f.label :status, class: 'text-title'
+          = f.select :status, topic_status_choice_helper, {}, class: 'form-control form-color-main'
+      .col-md-3
+        .form-group
+          .text-title Submit
+          = f.submit '検索する', class: 'form-control form-color-main'
+hr
+
+section.section
+  .row
+    - @topics.each do |topic|
+      .col-md-6
+        = render partial: 'partials/topic_list_01', locals: { topic: topic }
+
+  = paginate @topics
+
+
 
