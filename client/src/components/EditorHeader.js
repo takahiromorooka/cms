@@ -11,7 +11,7 @@ function EditorHeader({ setStateTitle, setStateThumbnail }) {
                         name="page[title]"
                         size="30"
                         type="text"
-                        className='form-control'
+                        className='form-control form-color-main'
                         onChange={(e) => setStateTitle(e.target.value)}
                     />
                 </div>
@@ -22,7 +22,7 @@ function EditorHeader({ setStateTitle, setStateThumbnail }) {
                         name="page[fine_name]"
                         size="30"
                         type="file"
-                        className='form-control'
+                        className='form-control form-color-main'
                         onChange={(e) => setStateThumbnail(e.target.files)}
                     />
                 </div>

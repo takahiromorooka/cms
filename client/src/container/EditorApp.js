@@ -39,7 +39,6 @@ class Editor extends React.Component {
     }
 
     setStateThumbnail(thumbnail) {
-        const createObjectURL = (window.URL || window.webkitURL).createObjectURL || window.createObjectURL;
 
         this.setState({
             thumbnail: thumbnail,
@@ -50,18 +49,6 @@ class Editor extends React.Component {
 
     onSubmit(e) {
         e.preventDefault()
-
-               // const form = $('#editor-form').get()[0];
-        // console.log(form)
-        // form.append()
-
-        // FormData オブジェクトを作成
-        const formData = new FormData();
-        formData.append('file', this.state.thumbnail[0])
-        console.log(formData.get('file'))
-
-
-        const createObjectURL = (window.URL || window.webkitURL).createObjectURL || window.createObjectURL;
         const params = {
             title: this.state.title,
             content: this.state.content,
@@ -85,11 +72,11 @@ class Editor extends React.Component {
     render() {
         return (
             <div>
-                <form id='editor-form' onSubmit={(e) => this.onSubmit(e)} encType="multipart/form-data" acceptCharset="UTF-8" >
+                <form id='editor-form' onSubmit={(e) => this.onSubmit(e)} encType="multipart/form-data"
+                      acceptCharset="UTF-8">
                     <div className='editor'>
                         <EditorHeader setStateTitle={(value) => this.setStateTitle(value)}
                                       setStateThumbnail={(value) => this.setStateThumbnail(value)}/>
-                        {/*<img src={this.state.image_src} />*/}
                         <hr/>
                         <div className='row'>
                             <div className='col-md-6'>
@@ -104,10 +91,18 @@ class Editor extends React.Component {
                             </div>
                         </div>
                         <hr/>
-                        <EditorFooter setStateDescription={(value) => this.setStateDescription(value)}/>
+                        <div className='row'>
+                            <div className='col-md-8'>
+                                <EditorFooter setStateDescription={(value) => this.setStateDescription(value)}/>
+                            </div>
+                            <div className='col-md-4'>
+                                <input type="submit" value="下書き"
+                                       className="btn btn-submit"/>
+                                <input type="submit" value="公開"
+                                       className="btn btn-submit"/>
+                            </div>
+                        </div>
                     </div>
-                    <input type="submit" value="保存"
-                           className="btn btn-main btn-default"/>
                 </form>
             </div>
         )

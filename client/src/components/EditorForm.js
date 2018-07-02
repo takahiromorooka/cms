@@ -8,7 +8,7 @@ function EditorFooter({ setStateText }) {
                 id="page_content"
                 name="page[content]"
                 rows="20"
-                className='form-control'
+                className='form-control form-color-main'
                 onChange={(e) =>setStateText(e.target.value)}/>
         </div>
     )
