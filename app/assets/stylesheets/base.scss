@@ -65,6 +65,15 @@ hr {
   padding-top: 80px;
 }
 
+.flash-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100000;
+}
+
+
 .breadcrumb {
   background-color: #fff;
 }
