@@ -15,6 +15,7 @@ class TopicsController < ApplicationController
   end
 
   def new
+    @categories = Category.get_category_as_json
   end
 
   def edit

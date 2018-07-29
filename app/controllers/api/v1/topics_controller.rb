@@ -18,7 +18,8 @@ module Api
         params.require(:topics).permit(
             :title,
             :content,
-            :description
+            :description,
+            :category_id
         )
       end
 

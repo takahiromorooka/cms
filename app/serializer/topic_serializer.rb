@@ -4,4 +4,5 @@ class TopicSerializer < ActiveModel::Serializer
              :content,
              :description
 
+  belongs_to :category
 end

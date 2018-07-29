@@ -17,4 +17,8 @@ class Category < ApplicationRecord
 
   has_many :topics
 
+  def self.get_category_as_json
+    Category.all.to_json(only: [:id, :name])
+  end
+
 end
