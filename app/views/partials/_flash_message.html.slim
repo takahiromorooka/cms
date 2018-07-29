@@ -1,0 +1,6 @@
+- if notice
+  .alert.alert-info.text-center.flash-message
+    = notice
+- if flash[:alert]
+  .alert.alert-danger.text-center.flash-message
+    = flash[:alert]
