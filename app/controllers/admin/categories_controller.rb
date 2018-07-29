@@ -22,10 +22,10 @@ module Admin
     def create
       @category = Category.new(category_params)
       if @category.save
-        redirect_to categories_path, notice: '保存に成功しました。'
+        redirect_to admin_categories_path, notice: '保存に成功しました。'
       else
         flash[:alert] = '保存に失敗しました。'
-        redirect_to categories_path
+        redirect_to admin_categories_path
       end
     end
 
