@@ -1,6 +1,6 @@
 section
   .text-title Search
-  = form_for @topic_form, url: topics_path, method: :get  do |f|
+  = form_for @topic_form, url: admin_topics_path, method: :get  do |f|
     .row
       .col-md-6
         .form-group
@@ -20,7 +20,7 @@ section.section
   .row
     - @topics.each do |topic|
       .col-md-6
-        = render partial: 'partials/topic_list_01', locals: { topic: topic }
+        = render partial: 'admin/partials/topic_list_01', locals: { topic: topic }
 
   = paginate @topics
 

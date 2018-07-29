@@ -2,7 +2,7 @@
 
 section
   .text-title Search
-  = form_for @category_form, url: categories_path, method: :get  do |f|
+  = form_for @category_form, url: admin_categories_path, method: :get  do |f|
     .row
       .col-md-8
         .form-group
@@ -18,7 +18,7 @@ section.section
   .category-action-area
     .text-title Result
     a.btn.btn-submit data-toggle="modal" data-target="#CategoryNewModal" add
-    == render partial: 'categories/category_new_modal'
+    == render partial: 'admin/categories/category_new_modal'
   .row
   - @categories.each do |category|
     .col-md-6

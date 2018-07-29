@@ -47,11 +47,4 @@ class ApplicationController < ActionController::Base
         "pc"
     end
   end
-
-  def basic_auth
-    authenticate_or_request_with_http_basic do |user, pass|
-      user == 'be' && pass == 'passion' || user == 'BEGUEST' && pass == 'WorkTogether'
-    end
-  end
-
 end
