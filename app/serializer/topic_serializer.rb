@@ -1,4 +1,4 @@
-class UserSerializer < ActiveModel::Serializer
+class TopicSerializer < ActiveModel::Serializer
   attributes :id,
              :title,
              :content,

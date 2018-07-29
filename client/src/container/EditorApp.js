@@ -47,6 +47,20 @@ class Editor extends React.Component {
 
     }
 
+    publishTopic () {
+        // axios.post('/api/v1/topics', {
+        //         topics: params,
+        //     }
+        // )
+        //     .then(function (response) {
+        //         alert(' 公開しました。')
+        //     })
+        //     .catch(function (error) {
+        //         alert('公開に失敗しました。')
+        //         console.log(error)
+        //     })
+    }
+
     onSubmit(e) {
         e.preventDefault()
         const params = {
@@ -55,7 +69,6 @@ class Editor extends React.Component {
             description: this.state.description,
             thumbnail: this.state.thumbnail[0]
         }
-        console.log(params)
 
         axios.post('/api/v1/topics', {
                 topics: params,
@@ -65,6 +78,7 @@ class Editor extends React.Component {
                 alert(' 保存に成功しました。')
             })
             .catch(function (error) {
+                alert('保存に失敗しました。')
                 console.log(error)
             })
     }
@@ -98,7 +112,7 @@ class Editor extends React.Component {
                             <div className='col-md-4'>
                                 <input type="submit" value="下書き"
                                        className="btn btn-submit"/>
-                                <input type="submit" value="公開"
+                                <input type="button" value="公開" onClick={this.publishTopic()} 　
                                        className="btn btn-submit"/>
                             </div>
                         </div>

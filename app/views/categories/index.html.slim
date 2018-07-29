@@ -1,0 +1,30 @@
+
+
+section
+  .text-title Search
+  = form_for @category_form, url: categories_path, method: :get  do |f|
+    .row
+      .col-md-8
+        .form-group
+          = f.label :name, class: 'text-title'
+          = f.text_field :name, class: 'form-control form-color-main'
+      .col-md-3
+        .form-group
+          .text-title Submit
+          = f.submit '検索する', class: 'form-control form-color-main'
+hr
+
+section.section
+  .category-action-area
+    .text-title Result
+    a.btn.btn-submit data-toggle="modal" data-target="#CategoryNewModal" add
+    == render partial: 'categories/category_new_modal'
+  .row
+  - @categories.each do |category|
+    .col-md-6
+      .category-list
+        .card
+          .category-thumbnail
+            = set_image_helper(category.thumbnail)
+            .category-name
+              = category.name

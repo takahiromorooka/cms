@@ -1,11 +1,11 @@
 module TopicsHelper
 
-  def topic_image_helper(topic)
-    return raw(image_tag 'noimage.png', class: 'image')
-    # if topic.nil? || topic.filename.blank?
-
-    raw(image_tag('noimage.png', 'data-original': t_ele.image_path, class: 'lazyload image'))
-  end
+  # def set_image_helper(topic)
+  #   return raw(image_tag 'noimage.png', class: 'image')
+  #   # if topic.nil? || topic.filename.blank?
+  #
+  #   raw(image_tag('noimage.png', 'data-original': t_ele.image_path, class: 'lazyload image'))
+  # end
 
 
   def topic_status_choice_helper

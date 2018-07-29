@@ -1,0 +1,12 @@
+create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+  t.string   "name",        null: false
+  t.text   "description"
+  t.integer  "parent_id"
+  t.string   "alias"
+  t.string   "thumbnail"
+  t.datetime "created_at",  null: false
+  t.datetime "updated_at",  null: false
+
+  t.index ["alias"], name: "idx_categories_01", using: :btree
+  t.index ["parent_id"], name: "idx_categories_02", using: :btree
+end

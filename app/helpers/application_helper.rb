@@ -19,4 +19,12 @@ module ApplicationHelper
 
     raw("<div class='markdown-contents'>#{markdown.render(content).html_safe}</div>")
   end
+
+
+  def set_image_helper(image)
+    return image_tag('noimage.png', class: 'image') if image.blank?
+
+    image_tag(image.url, class: 'image')
+  end
+
 end

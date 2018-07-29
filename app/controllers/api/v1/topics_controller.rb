@@ -4,13 +4,12 @@ module Api
 
       def create
         topic = Topic.new(topic_params)
-
+        # topic.thumbnail = params[:topics][:thumbnail]
         if topic.save
           json_response(200, '保存しました。')
         else
           json_response(400, '保存に失敗しました。')
         end
-
       end
 
       private
@@ -19,8 +18,7 @@ module Api
         params.require(:topics).permit(
             :title,
             :content,
-            :description,
-            thumbnail: []
+            :description
         )
       end
 

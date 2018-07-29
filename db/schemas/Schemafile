@@ -1,1 +1,2 @@
 require 'topics.schema'
+require 'categories.schema'

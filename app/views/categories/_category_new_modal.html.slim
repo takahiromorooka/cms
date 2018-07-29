@@ -1,0 +1,25 @@
+#CategoryNewModal.modal.fade[tabindex="-1" role="dialog" aria-labelledby="formModalLabel" style="display: none;"]
+  .modal-dialog
+    .modal-content
+      = form_for @category, url: api_v1_categories_path, method: :post do |f|
+        .category-modal
+          .modal-header
+            span.close-button[type="button" data-dismiss="modal"] x
+          .modal-body
+            .form-group
+              = f.label :name, class: 'label-main text-small'
+              = f.text_field :name, class: 'form-control form-color-main'
+            .form-group
+              = f.label :description, class: 'label-main text-small'
+              = f.text_area :description, class: 'form-control form-color-main'
+            .form-group
+              = f.label :thumbnail, class: 'label-main text-small'
+              = f.file_field :thumbnail, class: 'form-control form-color-main'
+            .form-group
+              = f.label :parent_id, class: 'label-main text-small'
+              = f.collection_select :parent_id, Category.all,  :id, :name, {},  class: 'form-control form-color-main'
+            .form-group
+              = f.label :alias, class: 'label-main text-small'
+              = f.text_field :alias, class: 'form-control form-color-main'
+            .form-group
+              = f.submit '保存', class: 'btn btn-main'

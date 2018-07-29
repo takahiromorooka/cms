@@ -18,12 +18,12 @@ class Topic < ApplicationRecord
     PUBLISHED = 1
   end
 
-
-
   mount_uploader :thumbnail, TopicThumbnailUploader
 
   validates :title, presence: true
-  # validates :content, presence: true
+  validates :content, presence: true
+
+  belongs_to :category
 
 
 end
