@@ -1,4 +1,4 @@
-
+== render partial: 'partials/flash_message'
 
 section
   .text-title Search
@@ -23,8 +23,7 @@ section.section
   - @categories.each do |category|
     .col-md-6
       .category-list
-        .card
-          .category-thumbnail
-            = set_image_helper(category.thumbnail)
-            .category-name
-              = category.name
+        .category-thumbnail
+          = set_image_helper(category.thumbnail)
+          .category-name
+            = category.name

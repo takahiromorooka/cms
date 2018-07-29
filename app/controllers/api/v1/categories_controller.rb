@@ -5,14 +5,13 @@ module Api
       def create
         @category = Category.new(category_params)
         if @category.save
-          json_response(200, '保存に成功oしました。')
+          json_response(200, '保存に成功しました。')
         else
           json_response(400, '保存に失敗しました。')
         end
       end
 
       def update
-
       end
 
       def destroy

@@ -1,7 +1,7 @@
 #CategoryNewModal.modal.fade[tabindex="-1" role="dialog" aria-labelledby="formModalLabel" style="display: none;"]
   .modal-dialog
     .modal-content
-      = form_for @category, url: api_v1_categories_path, method: :post do |f|
+      = form_for @category, url: categories_path, method: :post do |f|
         .category-modal
           .modal-header
             span.close-button[type="button" data-dismiss="modal"] x
