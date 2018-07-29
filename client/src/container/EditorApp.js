@@ -14,7 +14,8 @@ class Editor extends React.Component {
             content: '',
             description: '',
             thumbnail: '',
-            image_src: ''
+            image_src: '',
+            category_id: ''
         }
     }
 
@@ -38,6 +39,14 @@ class Editor extends React.Component {
 
     }
 
+    setStateCategory(category_id) {
+
+        this.setState({
+            category_id: category_id,
+        })
+
+    }
+
     setStateThumbnail(thumbnail) {
 
         this.setState({
@@ -48,17 +57,17 @@ class Editor extends React.Component {
     }
 
     publishTopic () {
-        // axios.post('/api/v1/topics', {
-        //         topics: params,
-        //     }
-        // )
-        //     .then(function (response) {
-        //         alert(' 公開しました。')
-        //     })
-        //     .catch(function (error) {
-        //         alert('公開に失敗しました。')
-        //         console.log(error)
-        //     })
+        axios.post('/api/v1/topics', {
+                topics: {status: 2},
+            }
+        )
+            .then(function (response) {
+                alert(' 公開しました。')
+            })
+            .catch(function (error) {
+                alert('公開に失敗しました。')
+                console.log(error)
+            })
     }
 
     onSubmit(e) {
@@ -67,8 +76,10 @@ class Editor extends React.Component {
             title: this.state.title,
             content: this.state.content,
             description: this.state.description,
-            thumbnail: this.state.thumbnail[0]
+            thumbnail: this.state.thumbnail[0],
+            category_id: this.state.category_id
         }
+        console.log(params)
 
         axios.post('/api/v1/topics', {
                 topics: params,
@@ -90,7 +101,9 @@ class Editor extends React.Component {
                       acceptCharset="UTF-8">
                     <div className='editor'>
                         <EditorHeader setStateTitle={(value) => this.setStateTitle(value)}
-                                      setStateThumbnail={(value) => this.setStateThumbnail(value)}/>
+                                      setStateThumbnail={(value) => this.setStateThumbnail(value)}
+                                      setStateCategory={(value) => this.setStateCategory((value))}
+                        />
                         <hr/>
                         <div className='row'>
                             <div className='col-md-6'>
@@ -112,7 +125,7 @@ class Editor extends React.Component {
                             <div className='col-md-4'>
                                 <input type="submit" value="下書き"
                                        className="btn btn-submit"/>
-                                <input type="button" value="公開" onClick={this.publishTopic()} 　
+                                <input type="button" value="公開" onClick={() => this.publishTopic()} 　
                                        className="btn btn-submit"/>
                             </div>
                         </div>
