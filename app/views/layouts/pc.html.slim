@@ -4,12 +4,15 @@ html lang="ja"
     meta charset="utf-8" /
     meta content="IE=edge" http-equiv="X-UA-Compatible" /
     meta content="width=device-width, initial-scale=1" name="viewport" /
-    title CMS
+
+    = meta_tags_helper(@meta_filename)
+
+    = favicon_link_tag
     = csrf_meta_tags
-    = csp_meta_tag
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
-  body
+
+  body[data-controller="#{controller_name}" data-action="#{action_name}" data-device="pc"]
     == render partial: '/partials/gtm'
     == render partial: '/partials/header'
 

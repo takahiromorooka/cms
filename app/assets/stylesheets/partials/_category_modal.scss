@@ -1,0 +1,37 @@
+.category-modal {
+
+  background-color: $bgMainColor;
+
+  .modal-header {
+    position: relative;
+    border: none;
+    background-color: gray;
+    height: 10px;
+
+    .close-button {
+      background-color: red;
+      border-radius: 50%;
+      color: #000;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 12px;
+      height: 16px;
+      line-height: 16px;
+      text-align: center;
+      top: 4px;
+      position: absolute;
+      left: 4px;
+      width: 16px;
+    }
+  }
+
+  &-body {
+
+  }
+
+  &-footer {
+
+  }
+
+
+}

@@ -29,3 +29,6 @@ config/environments/*.local.yml
 
 .idea
 public/tmp/*
+
+Gemfile.lock
+.ruby-version

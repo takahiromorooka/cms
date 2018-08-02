@@ -1,0 +1,8 @@
+.label-main {
+  color: $fontMainColor;
+
+  &:before{
+    content: '> ';
+    color: $fontMainColor;
+  }
+}
