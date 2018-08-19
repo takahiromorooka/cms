@@ -1,0 +1,19 @@
+.children-info-area
+  h2.text-huge.text-navy Ruby on Rails
+  p.description こちらのページは、Ruby on Railsのノウハウを中心に紹介しています。
+
+.children-articles
+  = link_to article_path(category_alias: 'a',child_category_alias: 'a',id: 1)
+    .grid-column-1
+      .card.article-card
+        img[src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=43ef07555334a21b6c7dcecc929070ce&auto=format&fit=crop&w=1782&q=80"]
+        .title
+          p title
+          p description
+
+  .grid-column-2
+    .card.article-card
+      img[src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=43ef07555334a21b6c7dcecc929070ce&auto=format&fit=crop&w=1782&q=80"]
+      .title
+        p title
+        p description

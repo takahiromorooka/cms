@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :admin do
-    root 'topics#index'
+    root to: 'topics#index'
     resources :topics
     resources :categories
   end

@@ -1,0 +1,88 @@
+.text-default {
+  color: $fontBlackColor;
+}
+
+.text-gray {
+  color: $fontGrayColor;
+}
+
+.text-navy {
+  color: $fontNavyColor;
+}
+
+.text-blue {
+  color: $fontBlueColor;
+}
+
+.text-huge {
+  font-size: 60px;
+}
+
+.text-main {
+  color: $mainColor;
+}
+
+.text-sub {
+  color: $subColor;
+}
+
+.text-ex-large {
+  font-size: 20px;
+}
+
+.text-large {
+  font-size: 18px;
+}
+
+.text-slightly-large {
+  font-size: 16px;
+}
+
+.text-normal {
+  font-size: 14px;
+}
+
+.text-small {
+  font-size: 12px;
+}
+
+.text-ex-small {
+  font-size: 10px;
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: $fontMainColor;
+
+  &:before{
+    content: '> ';
+    color: $fontMainColor;
+  }
+  @media (max-width: 767px) {
+    font-size: 24px;
+  }
+}
+
+.text-title-sub {
+  font-size: 21px;
+  margin-bottom: 20px;
+  border-left: 5px solid $mainColor;
+  padding-left: 10px;
+}
+
+.text-title-sub-white {
+  font-size: 21px;
+  margin-bottom: 20px;
+  border-left: 5px solid white;
+  padding-left: 10px;
+}
+

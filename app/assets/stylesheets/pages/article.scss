@@ -1,0 +1,347 @@
+.article-main {
+  margin-left: 64px;
+  .article-info-section {
+    height: 550px;
+    .article-info-area {
+      height: 300px;
+      .article-default-number {
+        position: absolute;
+        left: -24px;
+      }
+      .article-info {
+        max-width: 800px;
+        height: 100%;
+        margin-top: 20px;
+        background-color: #fff;
+        position: relative;
+        box-shadow: 0 2px 5px #ccc;
+
+        .article-title {
+          position: absolute;
+          left: 70px;
+          top: 40px;
+        }
+
+        .selected-topic-info {
+          position: absolute;
+          top: 120px;
+          left: 20px;
+          width: 55%;
+        }
+
+      }
+      .article-info-img {
+        img {
+          width: 50%;
+          position: absolute;
+          right: 40px;
+          top: 240px;
+          box-shadow: 0 2px 5px #ccc;
+        }
+      }
+
+    }
+  }
+
+  .index-section {
+    .title {
+      font-size: 28px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 40px;
+      width: 60%;
+      margin: 0 auto;
+      .index-number {
+        font-size: 24px;
+      }
+
+      .header {
+        margin-left: 16px;
+      }
+    }
+  }
+}
+
+
+.article-main-section {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  grid-template-columns: repeat(12, auto);
+  margin-left: 49px;
+
+  .article-area {
+    grid-column: 1 / 9;
+    grid-row: 1 / 3;
+  }
+
+  .sidebar-area {
+    grid-column: 9 / 13;
+    grid-row: 1 / 2;
+  }
+
+  .item-area {
+    margin-bottom: 40px;
+  }
+
+  //見出し
+  .article-big-heaher-area {
+    position: relative;
+    height: 100px;
+    .article-default-number {
+      position: absolute;
+      left: -20px;
+    }
+    h2 {
+      position: absolute;
+      left: 70px;
+      top: 40px;
+    }
+  }
+
+  .article-middle-header-area {
+    h3 {
+      margin-left: 12px;
+      border-bottom: 1px solid $fontBlackColor;
+
+      .middle-header-icon {
+        margin-left: 10px;
+      }
+      }
+  }
+
+  .article-small-header-area {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  //テキスト
+  .article-text-area {
+    p {
+      margin: 40px;
+    }
+  }
+
+  //画像
+  .article-img-area {
+    text-align: center;
+    img {
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+  }
+
+  //リスト
+  .article-list-area {
+    height: 100%;
+    position: relative;
+    .title {
+      position: absolute;
+      top: -28px;
+      left: 36px;
+      background-color: $fontNavyColor;
+      padding: 10px 60px;
+      color: #fff;
+    }
+    ul {
+      background-color: #fff;
+      box-shadow: 0 2px 5px #ccc;
+      padding: 60px 40px;
+      margin: 100px;
+      list-style: none;
+      font-size: 18px;
+      li:before {
+        font-family: 'Glyphicons Halflings';
+        content: "\e089";
+        margin-right: 10px;
+      }
+    }
+  }
+
+  //ボタン
+  .article-button-area {
+    text-align: center;
+  }
+
+  //引用
+  .article-quote-area {
+    width: 50%;
+    margin: 0 auto;
+    blockquote {
+      position: relative;
+      padding: 15px 10px 5px;
+      box-sizing: border-box;
+      font-style: italic;
+      background: #fff;
+      box-shadow: 0 2px 5px #ccc;
+      margin: 0 0 40px;
+    }
+
+    blockquote:before{
+      display: inline-block;
+      position: absolute;
+      top: -8px;
+      left: 9px;
+      width: 40px;
+      height: 30px;
+      vertical-align: middle;
+      //text-align: center;
+      content: "“";
+      font-family: sans-serif;
+      color: #FFF;
+      font-size: 70px;
+      line-height: 70px;
+      background: #6fcdd9;
+    }
+
+    blockquote:after{
+      position: absolute;
+      content: '';
+      top: -8px;
+      left: 49px;
+      border: none;
+      border-bottom: solid 8px #6cacb5;
+      border-right: solid 9px transparent;
+    }
+
+    blockquote p {
+      position: relative;
+      padding: 0;
+      margin: 10px 0;
+      z-index: 3;
+      line-height: 1.7;
+    }
+
+    blockquote cite {
+      display: block;
+      text-align: right;
+      color: #888888;
+      font-size: 0.2em;
+    }
+  }
+
+  //内部リンク
+  .article-inner-link-area {
+    margin: 30px;
+    background-color: #fff;
+    .category {
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+
+    .title {
+      margin-top: 30px;
+      margin-right: 30px;
+    }
+
+    .description {
+      font-size: 12px;
+      margin-right: 30px;
+    }
+
+    .inner-link {
+      float: right;
+      margin-bottom: 20px;
+      margin-right: 20px;
+    }
+  }
+  .article-sidebar {
+    padding: 0px 20px;
+    width: 345px;
+    margin: 20px;
+    background-color: #fff;
+
+    .header {
+      margin-top: 20px;
+      font-size: 24px;
+      width: 50%;
+      line-height: 1.0em;
+    }
+
+    .latest-topic {
+      border-top: 1px solid $fontGrayColor;
+      .category {
+        margin: 20px;
+        font-size: 12px;
+      }
+
+      .title {
+        font-size: 18px;
+        color: $fontNavyColor;
+      }
+
+      .text {
+        color: $fontGrayColor;
+      }
+
+    }
+    .button-area {
+      text-align: center;
+      margin: 30px 0;
+    }
+  }
+}
+
+.article-bottom-area {
+  margin-left: 49px;
+  .related-area-title {
+  }
+
+  .related-article-area {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    justify-items: center;
+    margin: 20px;
+
+    .related-article-img {
+      width: 100%;
+    }
+
+    //関連記事左
+    .related-article-img-left {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    .related-article-title-left {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .related-article-description-left {
+      grid-column: 1;
+      grid-row: 3;
+    }
+
+    .related-article-img-center {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    .related-article-title-center {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    .related-article-description-center {
+      grid-column: 2;
+      grid-row: 3;
+    }
+
+    .related-article-img-right {
+      grid-column: 3;
+      grid-row: 1;
+    }
+    .related-article-title-right {
+      grid-column: 3;
+      grid-row: 2;
+    }
+
+    .related-article-description-right {
+      grid-column: 3;
+      grid-row: 3;
+    }
+  }
+}

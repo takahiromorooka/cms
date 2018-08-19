@@ -1,0 +1,16 @@
+.form-group {
+  margin-bottom: 40px;
+
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 20px;
+  }
+}
+
+.form-control {
+  height: 40px;
+}
+
+.form-color-main {
+  color: white;
+  background: rgb(28, 29, 47);
+}

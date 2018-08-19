@@ -1,0 +1,64 @@
+.message-room-list {
+  margin-bottom: 40px;
+  .message-room-meta-info {
+    margin-bottom: 10px;
+    .unread-tag {
+      background-color: $alertColor;
+      color: #fff;
+      display: inline-block;
+      padding: 0 10px;
+      float: left;
+      margin-right: 10px;
+    }
+    @include clearfix;
+  }
+  .message-room-info {
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px dotted $borderColor;
+    img {
+      width: 50px;
+      height: 50px;
+      display: block;
+      object-fit: contain;
+      border: 1px solid $borderColor;
+    }
+  }
+  .card {
+    margin-bottom: 0;
+    a {
+      width: 100%;
+      height: 100%;
+      display: block;
+      &:hover {
+        background-color: #efefef;
+        transition: 0.8s;
+      }
+    }
+  }
+}
+
+.message-list {
+  .message-sender-info {
+    margin-bottom: 20px;
+    img {
+      width: 40px;
+      height: 40px;
+      display: block;
+      border: 1px solid $borderColor;
+    }
+    .your-sent-message {
+      padding-left: 10px;
+      border-left: 5px solid $mainColor;
+    }
+  }
+  .message-content {
+    margin-bottom: 20px;
+    p {
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

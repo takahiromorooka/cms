@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
+  before_action :set_meta_variables
 
+  before_action :switch_layout
 
   unless Rails.env.development?
     rescue_from Exception, with: :render_500
@@ -17,6 +19,11 @@ class ApplicationController < ActionController::Base
     Raven.capture_exception(e)
 
     render template: 'errors/error_500', status: 500, layout: 'no_header', content_type: 'text/html'
+  end
+
+  def set_meta_variables
+    @meta_filename = ""
+    @meta_hash = nil
   end
 
   def pc?
