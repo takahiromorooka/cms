@@ -25,8 +25,8 @@
         span.index-number.text-bold.text-navy 04
         span.header 見出し4ああああああああああああああ
 
-.row.article-main-section
-  .col-lg-8
+.article-main-section
+  .article-area
     .article-big-heaher-area
       span.article-default-number.text-huge.text-navy 01
       h2.text-bold 【SEO対策①】
@@ -35,7 +35,12 @@
       img[src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=43ef07555334a21b6c7dcecc929070ce&auto=format&fit=crop&w=1782&q=80" class="article-img"]
 
     .article-middle-header-area.item-area
-      h3 【SEO対策①-①】
+      h3.text-bold.text-navy
+       span.middle-header-icon >
+       |【SEO対策①-①】
+
+    .article-small-header-area.item-area
+      h4.text-bold 構造化マークアップ①
 
     .article-text-area.item-area
       p
@@ -88,7 +93,73 @@
             | 過去に2200万MAUのメディアのコンテンツディレクター兼SEOを担当後、ビジネスメディアを数十万sessionから600万sessionまで伸ばした事業部のマネージャーを経験した知見を大公開します！
           span.inner-link READ THIS →
 
-  .col-lg-4.top-sidebar
+    .article-big-heaher-area
+      span.article-default-number.text-huge.text-navy 02
+      h2.text-bold 【SEO対策①】
+
+    .article-img-area.item-area
+      img[src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=43ef07555334a21b6c7dcecc929070ce&auto=format&fit=crop&w=1782&q=80" class="article-img"]
+
+    .article-middle-header-area.item-area
+      h3.text-bold.text-navy
+       span.middle-header-icon >
+       |【SEO対策①-①】
+
+    .article-small-header-area.item-area
+      h4.text-bold 構造化マークアップ①
+
+    .article-text-area.item-area
+      p
+        | アップルの開発者向けイベント「WWDC 2018」が日本時間の本日（6月5日）未明に開催。
+
+          12や新watchOS、新macOSなど次期ソフトウェアが発表されました。現地を取材している編集長ACCNのリアルタイムツイートとあわせて、発表内容を振り返ります。
+
+          ＜iOS 12＞
+          ・iOS 12発表。iPhone 6sのアプリ起動が40%高速化など、古め機種での速度向上に力点
+          ・iOS 12の「グループ通知」、『ロック画面が通知に埋め尽くされる』解消へ
+          ・アニ文字が進化「Memoji」発表。ベロ出し対応「タンディテクション」機能でより表情豊かに
+          ・新しいSiriの「ショートカット」、マクロのように複数アプリ操作を一言で
+
+          ＜待望のダークモード追加 新macOS mojeve（モハベ）＞
+          ・新macOS Mojave (モハベ)発表。待望のダークモードなど新機能多数
+
+          ＜ARKit 2＞
+          ・アップル、AR向け新3DフォーマットUSDZ発表。iOS 12のARKit 2で導入
+          ・ARKit 2.0でレゴ遊びのデモ。リアルレゴの横にARレゴを建築、ミニフィグや乗り物が動き回る！
+          ・アップル、AR寸法測定アプリ「Measure」発表。引っ越しのときに大活躍しそうなAR定規
+
+
+
+    .article-list-area
+      p.title.text-bold.text-ex-large list title
+      ul
+        li seoのおすすめポイント1つ目
+        li list2
+        li list3
+        li list4
+
+    .article-button-area.item-area
+      .square_btn.text-ex-large
+        | BUTTON
+
+    .article-quote-area.item-area
+      blockquote
+        p 引用テキストがここに入ります。
+        cite https://domain.jp/quote
+
+    .article-inner-link-area
+      .row
+        .col-lg-3
+          .text-navy.category
+            | CATEGORY
+        .col-lg-9
+          p.title.text-navy
+            | 【SEO対策】ブログを始める上で、最初に手を付けること１０選｜３ヶ月で10万PVを出す方法大公開！
+          p.description.text-gray
+            | 過去に2200万MAUのメディアのコンテンツディレクター兼SEOを担当後、ビジネスメディアを数十万sessionから600万sessionまで伸ばした事業部のマネージャーを経験した知見を大公開します！
+          span.inner-link READ THIS →
+
+  .sidebar-area.article-sidebar
     h2.header.text-gray LATEST TOPICS
     .latest-topic
       .text-navy.category
@@ -118,12 +189,21 @@
       = link_to "/#" do
         .square_btn MORE
 
+.article-bottom-area
+  .related-area-title.text-huge
+    p Related article
+  .related-article-area
+    .related-article-img-left
+      img[src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=43ef07555334a21b6c7dcecc929070ce&auto=format&fit=crop&w=1782&q=80" class="related-article-img"]
+    p.related-article-title-left title
+    p.related-article-description-left description
 
+    .related-article-img-center
+      img[src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=43ef07555334a21b6c7dcecc929070ce&auto=format&fit=crop&w=1782&q=80" class="related-article-img"]
+    p.related-article-title-center title
+    p.related-article-description-center description
 
-
-
-
-
-
-
-
+    .related-article-img-right
+      img[src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=43ef07555334a21b6c7dcecc929070ce&auto=format&fit=crop&w=1782&q=80" class="related-article-img"]
+    p.related-article-title title
+    p.related-article-description description

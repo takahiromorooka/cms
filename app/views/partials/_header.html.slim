@@ -1,4 +1,21 @@
 header.header
-  div[style="background-color : #1A395D;"]
-    = link_to "LOGO", root_path, class: "text-huge", style: "margin-left: 20px;"
+  nav
+    .grid-column-1
+      a.navLinks[href="#"]
+        | Home
+    .grid-column-2
+      a.navLinks[href="#"]
+        | About Me
+
+    = link_to "KHnote", root_path
+
+    .grid-column-3
+      a.navLinks[href="#"]
+        | Portfolio
+    .grid-column-4
+      a.navLinks[href="#"]
+        | Contact Me
+
+
+
 .top-background-border
