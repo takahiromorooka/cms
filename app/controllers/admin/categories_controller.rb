@@ -33,6 +33,13 @@ module Admin
     end
 
     def update
+      category = Category.find_by!(id: params[:id])
+      if category.update(category_params)
+        redirect_to admin_categories_path, notice: '変更に成功しました。'
+      else
+        flash[:alert] = '変更に失敗しました。'
+        redirect_to admin_categories_path
+      end
     end
 
     def destroy
@@ -43,8 +50,10 @@ module Admin
     def category_params
       params.require(:category).permit(
           :name,
+          :description,
           :parent_id,
           :alias
+
       )
     end
 
