@@ -21,9 +21,11 @@ section.section
     == render partial: 'admin/categories/category_new_modal'
   .row
   - @categories.each do |category|
-    .col-md-6
-      .category-list
-        .category-thumbnail
-          = set_image_helper(category.thumbnail)
-          .category-name
-            = category.name
+    == render partial: 'admin/categories/category_edit_modal', locals: {category: category, form_id: "CategoryEditModal#{category.id}"}
+    a data-toggle="modal" data-target="#CategoryEditModal#{category.id}"
+      .col-md-6
+        .category-list
+          .category-thumbnail
+            = set_image_helper(category.thumbnail)
+            .category-name
+              = category.name
