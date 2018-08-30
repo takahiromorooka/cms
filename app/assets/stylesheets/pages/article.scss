@@ -1,267 +1,416 @@
+.breadcrumb {
+  margin-left:0;
+  background: #e9edf5;
+  padding: 12px 10px;
+  overflow: hidden;
+  li{
+    display:inline;/*横に並ぶように*/
+    list-style: none;
+    &:after{/* >を表示*/
+      padding: 0 3px;
+      color: $fontNavyColor;
+    }
+
+    &:last-child:after{
+      content: '';
+    }
+
+    a {
+      text-decoration: none;
+      color: $fontNavyColor;
+    }
+  }
+}
+
+main.article-main {
+  margin-left: 20px;
+  header.article {
+    grid-area: header;
+    padding: 20px;
+    display: grid;
+    grid-template:
+      "title" auto
+      "img" auto
+      "description" auto
+      / 1fr;
+
+    .article-title {
+      grid-area: title;
+      display: grid;
+      grid-template-columns: repeat(6,auto);
+      grid-template-rows: repeat(6,auto);
+      .back-font {
+        grid-column: 1 / 4;
+        grid-row: 1 / 4;
+        color: #ccc;
+      }
+      h1 {
+        grid-column: 2 / 7;
+        grid-row: 3 / 7;
+        background: #fff;
+        opacity: 0.7;
+        box-shadow: 0 2px 5px #fff;
+      }
+    }
+
+    .article-description {
+      grid-area: description;
+      display: grid;
+      grid-template-columns: repeat(6,auto);
+      grid-template-rows: repeat(5,1fr);
+      .back-font {
+        grid-column: 3 / -1;
+        grid-row: 1 / 4;
+        color: #ccc;
+      }
+      span {
+        grid-column: 2 / 7;
+        grid-row: 3 / 6;
+        background: #fff;
+        opacity: 0.7;
+        box-shadow: 0 2px 5px #fff;
+        font-size: 18px;
+      }
+    }
+
+    .img-area {
+      grid-area: img;
+      text-align: center;
+      img {
+        width: 70%;
+      }
+    }
+  }
+
+  .index {
+    .index-title{
+      text-align: center;
+      grid-area: index;
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: repeat(3,1fr);
+      .back-font {
+        grid-column: 1;
+        grid-row: 1 / -1;
+        color: #ccc;
+      }
+      span {
+        grid-row: 3;
+        grid-column: 1;
+        background: #fff;
+        opacity: 0.7;
+        box-shadow: 0 2px 5px #fff;
+      }
+    }
+  }
+
+  article {
+    grid-area: article;
+    display: grid;
+    grid-template:
+      "section" auto
+      "bottom" auto
+       / auto;
+
+    section {
+      grid-area: section;
+
+      //大見出し
+      .article-big-heaher-area {
+        display: grid;
+        grid-template-columns: repeat(6,auto);
+        grid-template-rows: repeat(5,1fr);
+        .back-font {
+          grid-column: 1 / 7;
+          grid-row: 1 / 4;
+          color: #ccc;
+        }
+        h2 {
+          grid-column: 2 / 7;
+          grid-row: 3 / 6;
+          background: #fff;
+          opacity: 0.7;
+          box-shadow: 0 2px 5px #fff;
+        }
+      }
+      //中見出し
+      .article-middle-header-area {
+        display: grid;
+        grid-template-columns: repeat(6,auto);
+        grid-template-rows: repeat(5,1fr);
+        .back-font {
+          grid-column: -5 / -1;
+          grid-row: 1 / 4;
+          color: #ccc;
+        }
+        h3 {
+          grid-column: 1 / 6;
+          grid-row: 3 / 6;
+          background: #fff;
+          opacity: 0.7;
+          box-shadow: 0 2px 5px #fff;
+        }
+      }
+      // .article-middle-header-area {
+      //   width: 100%;
+      //   position: relative;
+      //   img {
+      //     width:  80%;
+      //   }
+      //   h3 {
+      //     position: absolute;
+      //     bottom: 0px;
+      //     left: 8px;
+      //     background: #e9edf5;
+      //     opacity: 0.9;
+      //     box-shadow: 0 2px 5px #fff;
+      //   }
+      // }
+      //小見出し
+      .article-small-header-area {
+      }
+      //テキスト
+      .article-text-area {
+        p {
+          margin: 40px;
+        }
+      }
+      //画像
+      .article-img-area {
+        text-align: center;
+
+        img {
+          max-width: 600px;
+          margin-bottom: 40px;
+        }
+      }
+      //リスト
+      .article-list-area {
+        height: 100%;
+        position: relative;
+
+        .title {
+          position: absolute;
+          top: -28px;
+          left: 36px;
+          background-color: $fontNavyColor;
+          padding: 10px 60px;
+          color: #fff;
+        }
+
+        ul {
+          background-color: #fff;
+          box-shadow: 0 2px 5px #ccc;
+          padding: 60px 40px;
+          margin: 80px;
+          list-style: none;
+          font-size: 18px;
+          li:before {
+            font-family: 'Glyphicons Halflings';
+            content: "\e089";
+            margin-right: 10px;
+          }
+        }
+      }
+      //ボタン
+      .article-button-area {
+        text-align: center;
+      }
+      //引用
+      .article-quote-area {
+        blockquote {
+          position: relative;
+          padding: 15px 10px 5px;
+          box-sizing: border-box;
+          font-style: italic;
+          background: #fff;
+          box-shadow: 0 2px 5px #ccc;
+          margin: 0 0 40px;
+        }
+
+        blockquote:before {
+          display: inline-block;
+          position: absolute;
+          top: -8px;
+          left: 9px;
+          width: 40px;
+          height: 30px;
+          vertical-align: middle;
+          content: "“";
+          font-family: sans-serif;
+          color: #FFF;
+          font-size: 70px;
+          line-height: 70px;
+          background: #6fcdd9;
+        }
+
+        blockquote:after {
+          position: absolute;
+          content: '';
+          top: -8px;
+          left: 49px;
+          border: none;
+          border-bottom: solid 8px #6cacb5;
+          border-right: solid 9px transparent;
+        }
+
+        blockquote p {
+          position: relative;
+          padding: 0;
+          margin: 10px 0;
+          z-index: 3;
+          line-height: 1.7;
+        }
+
+        blockquote cite {
+          display: block;
+          text-align: right;
+          color: #888888;
+          font-size: 0.2em;
+        }
+      }
+      //内部リンク
+      .article-inner-link-area {
+        display: grid;
+        grid-template:
+        'category title title' auto
+        'category description description' auto
+        'category . link' auto
+        / auto auto auto;
+        margin: 30px;
+        border: 1px solid #ccc;
+
+        .category {
+          grid-area: category;
+          margin-top: 20px;
+          margin-left: 20px;
+        }
+
+        .title {
+          grid-area: title;
+          margin-top: 30px;
+          margin-right: 30px;
+        }
+
+        .description {
+          grid-area: description;
+          font-size: 12px;
+          margin-right: 30px;
+        }
+
+        .inner-link {
+          grid-area: link;
+          float: right;
+          margin-bottom: 20px;
+          margin-right: 20px;
+        }
+      }
+    }
+
+    footer {
+      grid-area: bottom;
+      .article-bottom-area {
+        .related-area-title {
+
+        }
+        .related-article-area {
+          display: grid;
+          img {
+            width: 100%;
+          }
+
+          .related-article {
+            display: grid;
+            grid-template-rows: repeat(3,auto);
+            img {
+              grid-row: 1;
+            }
+            .title {
+              grid-row: 2;
+            }
+            .description {
+              grid-row: 3;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  aside {
+    .article-sidebar {
+      background-color: #fff;
+
+      .header {
+        margin-top: 20px;
+        font-size: 24px;
+        width: 50%;
+        line-height: 1.0em;
+      }
+
+      .latest-topic {
+        border-top: 1px solid $fontGrayColor;
+
+        .category {
+          margin: 20px;
+          font-size: 12px;
+        }
+
+        .title {
+          font-size: 18px;
+          color: $fontNavyColor;
+        }
+
+        .text {
+          color: $fontGrayColor;
+        }
+      }
+
+      .button-area {
+        text-align: center;
+        margin: 30px 0;
+      }
+    }
+  }
+
+}
+
 /* pc */
 @media screen and (min-width: 961px) {
   main.article-main {
-    margin-left: 64px;
     display: grid;
     grid-template:
-         "header header header" auto
+         "header header index" auto
          "article article side" auto
          "article article ad" auto
          / 1fr 1fr 1fr;
-
-    header.article {
-      grid-area: header;
-      background-color: #fff;
-      box-shadow: 0 2px 5px #ccc;
-      margin: 30px 64px 60px 64px;
-      padding: 20px;
-      display: grid;
-      grid-template:
-        "number title title title" auto
-        ". description description img" auto
-        ". description description img" auto
-        / auto 1fr 1fr 1fr;
-        .article-default-number {
-          grid-area: number;
-          position: absolute;
-          left: 40px;
+    .index {
+      grid-area: index;
+      ul {
+        list-style: none;
+        li {
+          margin-bottom: 8px;
         }
-
-        .article-title {
-          grid-area: title;
-        }
-
-        .article-description {
-          grid-area: description;
-          font-size: 18px;
-        }
-
-        img {
-          grid-area: img;
-          width: 100%;
-        }
+      }
     }
-
     article {
-      grid-area: article;
-      display: grid;
-      grid-template:
-           "index" auto
-           "section" auto
-           "bottom" auto
-           / auto;
-
-
-       .index {
-         grid-area: index;
-         background: #fff;
-         box-shadow: 0 2px 5px #ccc;
-         margin: 20px;
-         padding: 20px;
-       }
-
        section {
-         grid-area: section;
-         .item-area {
-           margin-bottom: 40px;
+         //引用
+         .article-quote-area {
+           width: 50%;
+           margin: 0 auto;
          }
-          //大見出し
-          .article-big-heaher-area {
-            position: relative;
-            height: 100px;
-
-            .article-default-number {
-              position: absolute;
-              left: -20px;
-            }
-
-            h2 {
-              position: absolute;
-              left: 70px;
-              top: 40px;
-            }
-          }
-          //中見出し
-           .article-middle-header-area {
-             h3 {
-               margin-left: 12px;
-               border-bottom: 1px solid $fontBlackColor;
-
-               .middle-header-icon {
-                 margin-left: 10px;
-               }
-               }
-           }
-           //小見出し
-           .article-small-header-area {
-             width: 90%;
-             margin: 0 auto;
-           }
-
-           //テキスト
-           .article-text-area {
-             p {
-               margin: 40px;
-             }
-           }
-
-           //画像
-           .article-img-area {
-             text-align: center;
-             img {
-               max-width: 600px;
-               margin-bottom: 40px;
-             }
-           }
-
-           //リスト
-           .article-list-area {
-             height: 100%;
-             position: relative;
-             .title {
-               position: absolute;
-               top: -28px;
-               left: 36px;
-               background-color: $fontNavyColor;
-               padding: 10px 60px;
-               color: #fff;
-             }
-             ul {
-               background-color: #fff;
-               box-shadow: 0 2px 5px #ccc;
-               padding: 60px 40px;
-               margin: 100px;
-               list-style: none;
-               font-size: 18px;
-               li:before {
-                 font-family: 'Glyphicons Halflings';
-                 content: "\e089";
-                 margin-right: 10px;
-               }
-             }
-           }
-
-           //ボタン
-           .article-button-area {
-             text-align: center;
-           }
-
-           //引用
-           .article-quote-area {
-             width: 50%;
-             margin: 0 auto;
-             blockquote {
-               position: relative;
-               padding: 15px 10px 5px;
-               box-sizing: border-box;
-               font-style: italic;
-               background: #fff;
-               box-shadow: 0 2px 5px #ccc;
-               margin: 0 0 40px;
-             }
-
-             blockquote:before{
-               display: inline-block;
-               position: absolute;
-               top: -8px;
-               left: 9px;
-               width: 40px;
-               height: 30px;
-               vertical-align: middle;
-               content: "“";
-               font-family: sans-serif;
-               color: #FFF;
-               font-size: 70px;
-               line-height: 70px;
-               background: #6fcdd9;
-             }
-
-             blockquote:after{
-               position: absolute;
-               content: '';
-               top: -8px;
-               left: 49px;
-               border: none;
-               border-bottom: solid 8px #6cacb5;
-               border-right: solid 9px transparent;
-             }
-
-             blockquote p {
-               position: relative;
-               padding: 0;
-               margin: 10px 0;
-               z-index: 3;
-               line-height: 1.7;
-             }
-
-             blockquote cite {
-               display: block;
-               text-align: right;
-               color: #888888;
-               font-size: 0.2em;
-             }
-           }
-
-           //内部リンク
-           .article-inner-link-area {
-             margin: 30px;
-             background-color: #fff;
-             .category {
-               margin-top: 20px;
-               margin-left: 20px;
-             }
-
-             .title {
-               margin-top: 30px;
-               margin-right: 30px;
-             }
-
-             .description {
-               font-size: 12px;
-               margin-right: 30px;
-             }
-
-             .inner-link {
-               float: right;
-               margin-bottom: 20px;
-               margin-right: 20px;
-             }
-           }
-         }
-
+       }
        footer {
-           grid-area: bottom;
-           .article-bottom-area {
-             .related-area-title {
-             }
-
-             .related-article-area {
-               display: grid;
-               grid-template-columns: repeat(3, 1fr);
-               grid-row-gap: 20px;
-               grid-column-gap: 20px;
-               justify-items: center;
-               margin: 20px;
-
-               img {
-                 width: 100%;
-               }
-                //カテゴリーページにも同じCSS記述
-               .related-article {
-                 display: grid;
-                 grid-template-rows: repeat(3,auto);
-                 img {
-                   grid-row: 1;
-                 }
-                 .title {
-                   grid-row: 2;
-                 }
-                 .description {
-                   grid-row: 3;
-                 }
-               }
-             }
+         .article-bottom-area {
+           .related-article-area {
+             grid-template-columns: repeat(3, 1fr);
+             grid-row-gap: 20px;
+             grid-column-gap: 20px;
+             justify-items: center;
+             margin: 20px;
            }
+         }
        }
      }
 
@@ -272,37 +421,6 @@
         padding: 20px;
         width: 100%;
         margin: 20px 0px;
-        background-color: #fff;
-
-        .header {
-          margin-top: 20px;
-          font-size: 24px;
-          width: 50%;
-          line-height: 1.0em;
-        }
-
-        .latest-topic {
-          border-top: 1px solid $fontGrayColor;
-
-          .category {
-            margin: 20px;
-            font-size: 12px;
-          }
-
-          .title {
-            font-size: 18px;
-            color: $fontNavyColor;
-          }
-
-          .text {
-            color: $fontGrayColor;
-          }
-        }
-
-        .button-area {
-          text-align: center;
-          margin: 30px 0;
-        }
       }
     }
 
@@ -319,15 +437,19 @@
     margin-left: 64px;
     display: grid;
     grid-template:
-         "header" auto
-         "article" auto
-         "side" auto
+         'header' auto
+         'index' auto
+         'article' auto
+         'side' auto
          / auto;
+   .index {
+     margin-bottom: 40px;
+     ul {
+       list-style: none;
+     }
+   }
 
     header.article {
-      background-color: #fff;
-      box-shadow: 0 2px 5px #ccc;
-      margin: 30px 64px 60px 64px;
       padding: 20px;
       grid-area: header;
       display: grid;
@@ -358,225 +480,31 @@
     }
 
     article {
-      grid-area: article;
-      display: grid;
-      grid-template:
-           "index" auto
-           "section" auto
-           "bottom" auto
-           / auto;
-
-
        .index {
-         grid-area: index;
-         background: #fff;
-         box-shadow: 0 2px 5px #ccc;
          margin: 20px;
          padding: 20px;
+         ul {
+           list-style: none;
+         }
        }
-
        section {
-         grid-area: section;
-         .item-area {
-           margin-bottom: 40px;
+         //引用
+         .article-quote-area {
+           width: 50%;
+           margin: 0 auto;
          }
-          //大見出し
-          .article-big-heaher-area {
-            position: relative;
-            height: 100px;
-
-            .article-default-number {
-              position: absolute;
-              left: -20px;
-            }
-
-            h2 {
-              position: absolute;
-              left: 70px;
-              top: 40px;
-            }
-          }
-          //中見出し
-           .article-middle-header-area {
-             h3 {
-               margin-left: 12px;
-               border-bottom: 1px solid $fontBlackColor;
-
-               .middle-header-icon {
-                 margin-left: 10px;
-               }
-               }
-           }
-           //小見出し
-           .article-small-header-area {
-             width: 90%;
-             margin: 0 auto;
-           }
-
-           //テキスト
-           .article-text-area {
-             p {
-               margin: 40px;
-             }
-           }
-
-           //画像
-           .article-img-area {
-             text-align: center;
-             img {
-               max-width: 600px;
-               margin-bottom: 40px;
-             }
-           }
-
-           //リスト
-           .article-list-area {
-             height: 100%;
-             position: relative;
-             .title {
-               position: absolute;
-               top: -28px;
-               left: 36px;
-               background-color: $fontNavyColor;
-               padding: 10px 60px;
-               color: #fff;
-             }
-             ul {
-               background-color: #fff;
-               box-shadow: 0 2px 5px #ccc;
-               padding: 60px 40px;
-               margin: 100px;
-               list-style: none;
-               font-size: 18px;
-               li:before {
-                 font-family: 'Glyphicons Halflings';
-                 content: "\e089";
-                 margin-right: 10px;
-               }
-             }
-           }
-
-           //ボタン
-           .article-button-area {
-             text-align: center;
-           }
-
-           //引用
-           .article-quote-area {
-             width: 50%;
-             margin: 0 auto;
-             blockquote {
-               position: relative;
-               padding: 15px 10px 5px;
-               box-sizing: border-box;
-               font-style: italic;
-               background: #fff;
-               box-shadow: 0 2px 5px #ccc;
-               margin: 0 0 40px;
-             }
-
-             blockquote:before{
-               display: inline-block;
-               position: absolute;
-               top: -8px;
-               left: 9px;
-               width: 40px;
-               height: 30px;
-               vertical-align: middle;
-               content: "“";
-               font-family: sans-serif;
-               color: #FFF;
-               font-size: 70px;
-               line-height: 70px;
-               background: #6fcdd9;
-             }
-
-             blockquote:after{
-               position: absolute;
-               content: '';
-               top: -8px;
-               left: 49px;
-               border: none;
-               border-bottom: solid 8px #6cacb5;
-               border-right: solid 9px transparent;
-             }
-
-             blockquote p {
-               position: relative;
-               padding: 0;
-               margin: 10px 0;
-               z-index: 3;
-               line-height: 1.7;
-             }
-
-             blockquote cite {
-               display: block;
-               text-align: right;
-               color: #888888;
-               font-size: 0.2em;
-             }
-           }
-
-           //内部リンク
-           .article-inner-link-area {
-             margin: 30px;
-             background-color: #fff;
-             .category {
-               margin-top: 20px;
-               margin-left: 20px;
-             }
-
-             .title {
-               margin-top: 30px;
-               margin-right: 30px;
-             }
-
-             .description {
-               font-size: 12px;
-               margin-right: 30px;
-             }
-
-             .inner-link {
-               float: right;
-               margin-bottom: 20px;
-               margin-right: 20px;
-             }
+       }
+       footer {
+         .article-bottom-area {
+           .related-article-area {
+             grid-template-columns: repeat(3, 1fr);
+             grid-row-gap: 20px;
+             grid-column-gap: 20px;
+             justify-items: center;
+             margin: 20px;
            }
          }
-         footer {
-             grid-area: bottom;
-             .article-bottom-area {
-               .related-area-title {
-               }
-
-               .related-article-area {
-                 display: grid;
-                 grid-template-columns: repeat(3, 1fr);
-                 grid-row-gap: 20px;
-                 grid-column-gap: 20px;
-                 justify-items: center;
-                 margin: 20px;
-
-                 img {
-                   width: 100%;
-                 }
-
-                 .related-article {
-                   display: grid;
-                   grid-template-rows: repeat(3,auto);
-                   img {
-                     grid-row: 1;
-                   }
-                   .title {
-                     grid-row: 2;
-                   }
-                   .description {
-                     grid-row: 3;
-                   }
-                 }
-               }
-             }
-         }
+       }
      }
 
     aside {
@@ -586,37 +514,6 @@
         padding: 20px;
         width: 100%;
         margin: 20px 0px;
-        background-color: #fff;
-
-        .header {
-          margin-top: 20px;
-          font-size: 24px;
-          width: 50%;
-          line-height: 1.0em;
-        }
-
-        .latest-topic {
-          border-top: 1px solid $fontGrayColor;
-
-          .category {
-            margin: 20px;
-            font-size: 12px;
-          }
-
-          .title {
-            font-size: 18px;
-            color: $fontNavyColor;
-          }
-
-          .text {
-            color: $fontGrayColor;
-          }
-        }
-
-        .button-area {
-          text-align: center;
-          margin: 30px 0;
-        }
       }
     }
 
@@ -627,99 +524,82 @@
   }
 }
 
-
 /* smartPhone */
 @media screen and (max-width: 640px) {
   main.article-main {
-    margin-left: 18px;
+    margin-left: 10px;
     margin-right: 10px;
     display: grid;
-    grid-template-rows: repeat(3, auto);
-    grid-template-columns: 1fr;
-    grid-template-areas: "header" "article" "bottom";
+    grid-template:
+         'header' auto
+         'index' auto
+         'article' auto
+         'bottom' auto
+         / auto;
+
+    .back-font {
+     font-size: 40px;
+    }
+    .index {
+      margin-bottom: 40px;
+      .index-title {
+        .back-font {
+          font-size: 40px;
+        }
+        span {
+            grid-row: 2/ -1;
+        }
+      }
+      ul {
+        list-style: none;
+      }
+    }
 
     header.article {
-      background-color: #fff;
       box-shadow: 0 2px 5px #ccc;
-      margin-bottom: 20px;
+      margin: 20px 0px;
       padding: 16px;
-      grid-area: header;
-      display: grid;
-      grid-template-columns: auto;
-      grid-template-rows: repeat(3,auto);
-      grid-template-areas:
-        "number"
-        "title"
-        "description";
-
-      .article-default-number {
-        grid-area: number;
-      }
-
+      grid-template:
+        'title' auto
+        'img' auto
+        'description' auto
+        / auto;
       .article-title {
-        grid-area: title;
+        font-size: 20px;
+        h1 {
+          grid-row: 2 / 6;
+        }
       }
-
       .article-description {
-        grid-area: description;
+        font-size: 14px;
+        span {
+          grid-row: 2 / 6;
+        }
+
       }
 
       img {
-        display: none;
+        grid-area: img;
       }
     }
 
     article {
-      grid-area: article;
-      display: grid;
-      grid-template-rows:repeat(3,auto);
-      grid-template-columns: 1fr;
-      grid-template-areas:"index" "section" "bottom";
-
-      .index {
-        grid-area: index;
-        background: #fff;
-        box-shadow: 0 2px 5px #ccc;
-      }
-
       section {
-        grid-area: section;
-        .item-area {
-          margin-bottom: 40px;
-        }
-        //大見出し
         .article-big-heaher-area {
-          position: relative;
-          height: 100px;
-
-          .article-default-number {
-            position: absolute;
-            left: -20px;
+          .back-font {
+            grid-column: 1 / 7;
           }
-
           h2 {
-            position: absolute;
-            left: 70px;
-            top: 40px;
+            grid-row: 2 / 6;
           }
         }
-        //中見出し
         .article-middle-header-area {
           h3 {
-            margin-left: 12px;
-            border-bottom: 1px solid $fontBlackColor;
-
-            .middle-header-icon {
-              margin-left: 10px;
-            }
+            grid-row: 2 / 6;
+            grid-column: 1 / 7;
           }
         }
-        //小見出し
-        .article-small-header-area {
-          width: 90%;
-          margin: 0 auto;
-        }
-        //テキスト
+        // テキスト
         .article-text-area {
           p {
             margin: 10px;
@@ -727,146 +607,40 @@
         }
         //画像
         .article-img-area {
-          text-align: center;
-
           img {
             max-width: 300px;
-            margin-bottom: 40px;
           }
         }
         //リスト
         .article-list-area {
-          height: 100%;
-          position: relative;
-
           .title {
-            position: absolute;
-            top: -28px;
             left: -10px;
-            background-color: $fontNavyColor;
-            padding: 10px 60px;
-            color: #fff;
           }
-
           ul {
-            background-color: #fff;
-            box-shadow: 0 2px 5px #ccc;
-            padding: 30px 30px;
-            list-style: none;
-            font-size: 18px;
-
-            li:before {
-              font-family: 'Glyphicons Halflings';
-              content: "\e089";
-              margin-right: 10px;
-            }
+            padding: 30px;
+            margin: 30px 0px;
           }
         }
-        //ボタン
-        .article-button-area {
-          text-align: center;
-        }
-        //引用
-        .article-quote-area {
-          blockquote {
-            position: relative;
-            padding: 15px 10px 5px;
-            box-sizing: border-box;
-            font-style: italic;
-            background: #fff;
-            box-shadow: 0 2px 5px #ccc;
-            margin: 0 0 40px;
-          }
-
-          blockquote:before {
-            display: inline-block;
-            position: absolute;
-            top: -8px;
-            left: 9px;
-            width: 40px;
-            height: 30px;
-            vertical-align: middle;
-            content: "“";
-            font-family: sans-serif;
-            color: #FFF;
-            font-size: 70px;
-            line-height: 70px;
-            background: #6fcdd9;
-          }
-
-          blockquote:after {
-            position: absolute;
-            content: '';
-            top: -8px;
-            left: 49px;
-            border: none;
-            border-bottom: solid 8px #6cacb5;
-            border-right: solid 9px transparent;
-          }
-
-          blockquote p {
-            position: relative;
-            padding: 0;
-            margin: 10px 0;
-            z-index: 3;
-            line-height: 1.7;
-          }
-
-          blockquote cite {
-            display: block;
-            text-align: right;
-            color: #888888;
-            font-size: 0.2em;
-          }
-        }
-        //内部リンク
         .article-inner-link-area {
-          padding: 10px;
-          background-color: #fff;
-
-          .category {
-            margin-top: 20px;
-            margin-left: 20px;
-          }
-
-          .title {
-            margin-top: 30px;
-            margin-right: 30px;
-          }
-
-          .description {
-            font-size: 12px;
-            margin-right: 30px;
-          }
-
-          .inner-link {
-            float: right;
-            margin-bottom: 20px;
-            margin-right: 20px;
-          }
+          display: grid;
+          grid-template:
+          'category' auto
+          'title' auto
+          'description' auto
+          'link' auto
+          / auto;
+          margin: 30px 0px;
+          padding: 20px;
         }
       }
       footer {
-        grid-area: bottom;
         width: 100%;
         .article-bottom-area {
-          .related-area-title {
-          }
           .related-article-area {
-            display: grid;
             grid-template-columns: 1fr;
             .related-article {
-              display: grid;
-              grid-template-rows: repeat(3,auto);
               img {
                 width: 100%;
-                grid-row: 1;
-              }
-              .title {
-                grid-row: 2;
-              }
-              .description {
-                grid-row: 3;
               }
             }
           }
@@ -879,37 +653,6 @@
 
       .article-sidebar {
         padding: 10px;
-        background-color: #fff;
-
-        .header {
-          margin-top: 20px;
-          font-size: 24px;
-          width: 50%;
-          line-height: 1.0em;
-        }
-
-        .latest-topic {
-          border-top: 1px solid $fontGrayColor;
-
-          .category {
-            margin: 20px;
-            font-size: 12px;
-          }
-
-          .title {
-            font-size: 18px;
-            color: $fontNavyColor;
-          }
-
-          .text {
-            color: $fontGrayColor;
-          }
-        }
-
-        .button-area {
-          text-align: center;
-          margin: 30px 0;
-        }
       }
     }
   }
