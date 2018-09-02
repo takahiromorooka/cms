@@ -8,6 +8,7 @@ import EditorFooter from "../components/EditorFooter";
 class Editor extends React.Component {
     constructor(props) {
         super(props)
+        const action = document.getElementById('topic-editor-action').value
 
         this.state = {
             title: '',
@@ -15,9 +16,36 @@ class Editor extends React.Component {
             description: '',
             thumbnail: '',
             image_src: '',
-            category_id: ''
+            category_id: '',
+            action: action
         }
     }
+
+    componentDidMount() {
+        if (this.state.action === 'edit') {
+            const self = this;
+            const topicId = document.getElementById('topic-id').value
+            axios.get('/api/v1/topics', {
+                params: {id: topicId}
+            })
+                .then(function (response) {
+                    self.setState({
+                        title: response.data.title,
+                        content: response.data.content,
+                        description: response.data.description,
+                        thumbnail: '',
+                        image_src: '',
+                        category_id: response.data.category.id
+                    })
+
+                })
+                .catch(function (error) {
+                    alert('エラーが発生しました。')
+                    console.log(error)
+                })
+        }
+    }
+
 
     setStateTitle(title) {
         this.setState({
@@ -56,9 +84,11 @@ class Editor extends React.Component {
 
     }
 
-    publishTopic () {
-        axios.post('/api/v1/topics', {
+    publishTopic() {
+        const topicId = document.getElementById('topic-id').value
+        axios.patch('/api/v1/topics', {
                 topics: {status: 2},
+                id: topicId
             }
         )
             .then(function (response) {
@@ -80,18 +110,35 @@ class Editor extends React.Component {
             category_id: this.state.category_id
         }
         console.log(params)
+        if (this.state.action === 'new') {
+            axios.post('/api/v1/topics', {
+                    topics: params,
+                }
+            )
+                .then(function (response) {
+                    alert(' 保存に成功しました。')
+                })
+                .catch(function (error) {
+                    alert('保存に失敗しました。')
+                    console.log(error)
+                })
 
-        axios.post('/api/v1/topics', {
-                topics: params,
-            }
-        )
-            .then(function (response) {
-                alert(' 保存に成功しました。')
-            })
-            .catch(function (error) {
-                alert('保存に失敗しました。')
-                console.log(error)
-            })
+        }
+        if (this.state.action === 'edit') {
+            const topicId = document.getElementById('topic-id').value
+            axios.patch('/api/v1/topics', {
+                    id: topicId,
+                    topics: params
+                }
+            )
+                .then(function (response) {
+                    alert(' 更新に成功しました。')
+                })
+                .catch(function (error) {
+                    alert('更新に失敗しました。')
+                    console.log(error)
+                })
+        }
     }
 
     render() {
@@ -100,15 +147,20 @@ class Editor extends React.Component {
                 <form id='editor-form' onSubmit={(e) => this.onSubmit(e)} encType="multipart/form-data"
                       acceptCharset="UTF-8">
                     <div className='editor'>
-                        <EditorHeader setStateTitle={(value) => this.setStateTitle(value)}
-                                      setStateThumbnail={(value) => this.setStateThumbnail(value)}
-                                      setStateCategory={(value) => this.setStateCategory((value))}
+                        <EditorHeader
+                            title={this.state.title}
+                            category_id={this.state.category_id}
+                            setStateTitle={(value) => this.setStateTitle(value)}
+                            setStateThumbnail={(value) => this.setStateThumbnail(value)}
+                            setStateCategory={(value) => this.setStateCategory((value))}
                         />
                         <hr/>
                         <div className='row'>
                             <div className='col-md-6'>
                                 <div className='editor-form'>
-                                    <EditorForm setStateText={(value) => this.setStateText(value)}/>
+                                    <EditorForm
+                                        content={this.state.content}
+                                        setStateText={(value) => this.setStateText(value)}/>
                                 </div>
                             </div>
                             <div className='col-md-6'>
@@ -120,12 +172,22 @@ class Editor extends React.Component {
                         <hr/>
                         <div className='row'>
                             <div className='col-md-8'>
-                                <EditorFooter setStateDescription={(value) => this.setStateDescription(value)}/>
+                                <EditorFooter
+                                    description={this.state.description}
+                                    setStateDescription={(value) => this.setStateDescription(value)}/>
                             </div>
                             <div className='col-md-4'>
-                                <input type="submit" value="下書き"
-                                       className="btn btn-submit"/>
-                                <input type="button" value="公開" onClick={() => this.publishTopic()} 　
+                                {
+                                    (() => {
+                                        if (this.state.action === 'new') {
+                                            return <input type="submit" value="下書き" className="btn btn-submit"/>
+                                        }
+                                        if (this.state.action === 'edit') {
+                                            return <input type="submit" value="更新" className="btn btn-submit"/>;
+                                        }
+                                    })()
+                                }
+                                <input type="button" value="公開" onClick={() => this.publishTopic()}
                                        className="btn btn-submit"/>
                             </div>
                         </div>

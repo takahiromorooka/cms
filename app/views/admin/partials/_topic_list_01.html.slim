@@ -1,14 +1,15 @@
 .topic-list-01
-  .card
-    .topic-thumbnail
-      = set_image_helper(topic.thumbnail)
-      .topic-category
-        .tag.tag-sub
-          | category
-    .topic-content
-      .topic-title
-        = topic.title
-      .text-right
-        .topic-status.tag.tag-main
-          = topic_status_name_helper(topic.status)
+  = link_to edit_admin_topic_path(topic.id) do
+    .card
+      .topic-thumbnail
+        = set_image_helper(topic.thumbnail)
+        .topic-category
+          .tag.tag-sub
+            | category
+      .topic-content
+        .topic-title
+          = topic.title
+        .text-right
+          .topic-status.tag.tag-main
+            = topic_status_name_helper(topic.status)
 

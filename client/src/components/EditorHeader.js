@@ -1,6 +1,6 @@
 import React from 'react'
 
-function EditorHeader({ setStateTitle, setStateThumbnail, setStateCategory }) {
+function EditorHeader({title, category_id, setStateTitle, setStateThumbnail, setStateCategory}) {
     const categories = JSON.parse(document.getElementById('topic-editor-categories').value)
     const categoryOptions = categories.map((n) => (
             <option key={n.id} value={n.id}>
@@ -14,10 +14,7 @@ function EditorHeader({ setStateTitle, setStateThumbnail, setStateCategory }) {
                 <div className='col-md-4'>
                     <div className='text-title'>Title</div>
                     <input
-                        id="page_title"
-                        name="page[title]"
-                        size="30"
-                        type="text"
+                        value={title}
                         className='form-control form-color-main'
                         onChange={(e) => setStateTitle(e.target.value)}
                     />
@@ -25,8 +22,6 @@ function EditorHeader({ setStateTitle, setStateThumbnail, setStateCategory }) {
                 <div className='col-md-4'>
                     <div className='text-title'>Thumbnail</div>
                     <input
-                        id="page_fine_name"
-                        name="page[fine_name]"
                         size="30"
                         type="file"
                         className='form-control form-color-main'
@@ -36,7 +31,8 @@ function EditorHeader({ setStateTitle, setStateThumbnail, setStateCategory }) {
                 <div className='col-md-4'>
                     <div className='text-title'>Category</div>
                     <select className='form-control form-color-main'
-                            onChange={(e) => setStateCategory(e.target.value)}>
+                            onChange={(e) => setStateCategory(e.target.value)}
+                            value={category_id}>
                         <option/>
                         {categoryOptions}
                     </select>
