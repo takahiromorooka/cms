@@ -7,7 +7,7 @@ body {
   word-break: break-word;
   line-height: 1.6;
   letter-spacing: 1px;
-  background-color: $mainbackgroundColor;
+  background-color: #fff;
   position: relative;
 }
 
@@ -19,8 +19,8 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 { font-size: 26px; }
-h2 { font-size: 22px; }
-h3 { font-size: 20px; }
+h2 { font-size: 24px; }
+h3 { font-size: 22px; }
 h4, h5, h6{ font-size: 18px; }
 
 a {
@@ -29,6 +29,11 @@ a {
     text-decoration: underline;
     color: $mainColor;
   }
+}
+
+p {
+  line-height: 1.9;
+  font-size: 17px;
 }
 
 hr {
