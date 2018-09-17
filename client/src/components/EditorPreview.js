@@ -8,7 +8,7 @@ function EditorFooter({ title, content }) {
             <div key='preview-title'>
                 {remark().use(reactRenderer).processSync(title).contents}
             </div>
-            <div key='preview-content'>
+            <div key='preview-content' >
                 {remark().use(reactRenderer).processSync(content).contents}
             </div>
         </div>

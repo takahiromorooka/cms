@@ -1,14 +1,16 @@
 import React from 'react'
+import ElementButton from '../components/EditorElementButton'
 
-function EditorFooter({ setStateText }) {
+function EditorFooter({content,  setStateText }) {
     return (
         <div>
             <div className='text-title'>Text</div>
+            {/*<ElementButton/>*/}
             <textarea
-                id="page_content"
-                name="page[content]"
+                id="editor_content"
                 rows="20"
                 className='form-control form-color-main'
+                value={content}
                 onChange={(e) =>setStateText(e.target.value)}/>
         </div>
     )
