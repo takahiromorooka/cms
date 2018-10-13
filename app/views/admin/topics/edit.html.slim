@@ -1,7 +1,4 @@
 #topicEditor data-topic-id="#{@topic.id}"
 input#topic-editor-categories type="hidden" value='#{@categories}'
-input#topic-editor-action type="hidden" value="#{params[:action]}"
-input#topic-id type="hidden" value="#{@topic.id}"
-
 
 = javascript_include_tag 'webpack/topics/edit.js'
