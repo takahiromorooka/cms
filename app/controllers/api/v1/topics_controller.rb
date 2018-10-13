@@ -12,7 +12,7 @@ module Api
         topic = Topic.new(topic_params)
         # topic.thumbnail = params[:topics][:thumbnail]
         if topic.save
-          json_response(200, '保存しました。')
+          render json: topic, include: [:category]
         else
           json_response(400, '保存に失敗しました。')
         end
