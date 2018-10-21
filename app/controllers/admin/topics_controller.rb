@@ -23,6 +23,10 @@ module Admin
     def edit
     end
 
+    def update
+      binding.pry
+    end
+
     private
 
     def set_topic

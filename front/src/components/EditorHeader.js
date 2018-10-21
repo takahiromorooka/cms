@@ -24,6 +24,7 @@ function EditorHeader({title, category_id, setStateTitle, setStateThumbnail, set
                     <input
                         size="30"
                         type="file"
+                        name="thumbnail"
                         className='form-control form-color-main'
                         onChange={(e) => setStateThumbnail(e.target.files)}
                     />

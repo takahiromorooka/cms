@@ -5,6 +5,7 @@ import EditorHeader from "./EditorHeader";
 import EditorForm from "./EditorForm";
 import EditorPreview from "./EditorPreview";
 import EditorFooter from "./EditorFooter";
+const querystring = require('querystring');
 
 
 class EditorEdit extends React.Component {
@@ -16,8 +17,8 @@ class EditorEdit extends React.Component {
             title: '',
             content: '',
             description: '',
+            status: '',
             thumbnail: '',
-            image_src: '',
             category_id: '',
             topicId: topicId,
         }
@@ -31,6 +32,7 @@ class EditorEdit extends React.Component {
                     content: data.content,
                     description: data.description,
                     category_id: data.category_id,
+                    status: data.status
                 })
             })
             .catch(error => {
@@ -71,15 +73,17 @@ class EditorEdit extends React.Component {
 
         this.setState({
             thumbnail: thumbnail,
-            image_src: createObjectURL(thumbnail[0])
         })
 
     }
 
-    publishTopic() {
-        TopicsApi.publishTopic(this.state.topicId)
+    publishTopic(status) {
+        TopicsApi.publishTopic(this.state.topicId, status)
             .then(data => {
-                alert('公開に成功しました。')
+                {status === 0 ?
+                    alert('記事を非公開に変更しました。')
+                    : alert('記事を公開しました。')}
+                this.setState({status: status})
             })
             .catch(error => {
                 alert(error.data)
@@ -89,11 +93,17 @@ class EditorEdit extends React.Component {
 
     onSubmit(e) {
         e.preventDefault()
+        console.log(this.state.thumbnail[0])
+        let formData = new FormData()
+        console.log(formData)
+        formData.append("file", this.state.thumbnail[0])
+        console.log(formData)
+        console.log(formData.get('file'))
         const params = {
             title: this.state.title,
             content: this.state.content,
             description: this.state.description,
-            thumbnail: this.state.thumbnail[0],
+            thumbnail: formData,
             category_id: this.state.category_id
         }
 
@@ -143,8 +153,12 @@ class EditorEdit extends React.Component {
                             </div>
                             <div className='col-md-4'>
                                 <input type="submit" value="編集" className="btn btn-submit"/>
-                                <input type="button" value="公開" onClick={() => this.publishTopic()}
-                                       className="btn btn-submit"/>
+                                {this.state.status === 0 ?
+                                    <input type="button" value="公開" onClick={() => this.publishTopic(1)}
+                                                                 className="btn btn-submit"/>
+                                    : <input type="button" value="非公開" onClick={() => this.publishTopic(0)}
+                                             className="btn btn-submit"/>}
+
                             </div>
                         </div>
                     </div>

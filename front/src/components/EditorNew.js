@@ -58,7 +58,7 @@ class EditorNew extends React.Component {
 
         this.setState({
             thumbnail: thumbnail,
-            image_src: createObjectURL(thumbnail[0])
+            // image_src: createObjectURL(thumbnail[0])
         })
 
     }
@@ -76,15 +76,22 @@ class EditorNew extends React.Component {
 
     onSubmit(e) {
         e.preventDefault()
+        console.log(this.state.thumbnail[0])
+        let formData = new FormData()
+        console.log(formData)
+        formData.append("file", this.state.thumbnail[0])
+        console.log(formData)
+        console.log(formData.get('file'))
         const params = {
             title: this.state.title,
             content: this.state.content,
             description: this.state.description,
-            thumbnail: this.state.thumbnail[0],
+            thumbnail: formData,
             category_id: this.state.category_id
         }
 
         TopicsApi.saveTopics(params)
+            console.log(params)
             .then(data => {
                 console.log(data)
                 alert('保存に成功しました。')
@@ -98,8 +105,7 @@ class EditorNew extends React.Component {
     render() {
         return (
             <div>
-                <form id='editor-form' onSubmit={(e) => this.onSubmit(e)} encType="multipart/form-data"
-                      acceptCharset="UTF-8">
+                <form id='editor-form' onSubmit={(e) => this.onSubmit(e)} >
                     <div className='editor'>
                         <EditorHeader
                             title={this.state.title}

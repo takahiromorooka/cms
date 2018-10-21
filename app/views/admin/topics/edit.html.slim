@@ -2,3 +2,8 @@
 input#topic-editor-categories type="hidden" value='#{@categories}'
 
 = javascript_include_tag 'webpack/topics/edit.js'
+
+= form_for @topic, url: admin_topic_path, method: :put do |f|
+  = f.file_field :thumbnail, class: 'form-control'
+  = f.submit
+

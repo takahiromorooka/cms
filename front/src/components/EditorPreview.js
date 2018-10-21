@@ -1,15 +1,20 @@
 import React from 'react'
-import remark from "remark";
-import reactRenderer from "remark-react";
+
+
 
 function EditorFooter({ title, content }) {
+    const ReactMarkdown = require('react-markdown/with-html')
     return (
         <div className='editor-preview'>
             <div key='preview-title'>
-                {remark().use(reactRenderer).processSync(title).contents}
+                <ReactMarkdown
+                    source={title}
+                    escapeHtml={false}/>
             </div>
             <div key='preview-content' >
-                {remark().use(reactRenderer).processSync(content).contents}
+                <ReactMarkdown
+                source={content}
+                escapeHtml={false}/>
             </div>
         </div>
     )

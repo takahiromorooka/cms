@@ -15,11 +15,8 @@ class TopicsApi extends ApiBase {
 
     static saveTopics(params) {
         const baseUrl = this.defaultBaseUrl()
-
         return new Promise(function (resolve, reject) {
-            axios.post(baseUrl + '/topics', {
-                topics: params
-            })
+            axios.post(baseUrl + '/topics', { topics: params },)
                 .then(response => resolve(response.data))
                 .catch(error => reject(error.response.data))
         })
@@ -37,13 +34,13 @@ class TopicsApi extends ApiBase {
         })
     }
 
-    static publishTopic(topicId) {
+    static publishTopic(topicId, status) {
         const baseUrl = this.defaultBaseUrl()
 
         return new Promise(function (resolve, reject) {
-            axios.put(baseUrl + 'topics', {
+            axios.put(baseUrl + '/topics/' + topicId, {
                 topics: {
-                    status: 1,
+                    status: status,
                     topic_id: topicId
                 }
             })
@@ -51,6 +48,16 @@ class TopicsApi extends ApiBase {
                 .catch(error => reject(error.response.data))
         })
 
+    }
+
+    static getRelatedTopicInfo(url) {
+        const baseUrl = this.defaultBaseUrl()
+        return new Promise(function(resolve, reject) {
+
+            axios.get(baseUrl + '/topics/set_related_topics', {params: {url: url}})
+                .then(response => resolve(response.data))
+                .catch(error => reject(error.response.data))
+        })
     }
 
 }

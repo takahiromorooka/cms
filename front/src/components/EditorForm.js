@@ -1,13 +1,14 @@
 import React from 'react'
 import ElementButton from '../components/EditorElementButton'
 
-function EditorFooter({content,  setStateText }) {
+function EditorForm({content,  setStateText }) {
     return (
         <div>
             <div className='text-title'>Text</div>
-            {/*<ElementButton/>*/}
+            <ElementButton
+            setStateText={setStateText}/>
             <textarea
-                id="editor_content"
+                id="editor-content"
                 rows="20"
                 className='form-control form-color-main'
                 value={content}
@@ -16,4 +17,4 @@ function EditorFooter({content,  setStateText }) {
     )
 }
 
-export default EditorFooter
+export default EditorForm
