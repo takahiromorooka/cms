@@ -1,8 +1,4 @@
 #topicEditor
-input#topic-editor-categories type="hidden" class='test'value='#{@categories}'
-input#topic-editor-action type="hidden" value="#{params[:action]}"
-input#topic-id type="hidden" value=""
+input#topic-editor-categories type="hidden" value='#{@categories}'
 
-
-
-= javascript_include_tag 'webpack/Editor'
+= javascript_include_tag 'webpack/topics/new.js'

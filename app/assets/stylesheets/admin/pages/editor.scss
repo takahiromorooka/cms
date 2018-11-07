@@ -5,9 +5,56 @@
   }
 
   .editor-preview {
+    overflow: scroll;
     height: 100vh;
     background-color: #fff;
     color: #000;
+
+    .related-topic-elements {
+      a {
+        text-decoration: none;
+        color: #000000
+        }
+      width: 90%;
+
+      .related-topic-container {
+        margin-bottom: 40px;
+        border: 1px solid #efefef;
+        width: 100%;
+        padding: 10px;
+
+        &:hover {
+          cursor: pointer;
+          //background-color: $borderColor;
+          //transition: 0.8s;
+        }
+
+        .related-topic-top-container {
+          height: auto;
+          overflow: hidden;
+          margin-bottom: 10px;
+          img {
+            height: 70px;
+            width: 20%;
+            padding-right: 10px;
+            object-fit: contain;
+            float: left;
+          }
+          .related-topic-title {
+            float: right;
+            width: 80%;
+            font-size: 18px;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+        .related-topic-bottom-container {
+          width: 100%;
+          color: gray;
+        }
+      }
+    }
   }
 }
 

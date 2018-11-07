@@ -2,7 +2,8 @@ class TopicSerializer < ActiveModel::Serializer
   attributes :id,
              :title,
              :content,
-             :description
+             :description,
+             :status
 
   belongs_to :category
 end
