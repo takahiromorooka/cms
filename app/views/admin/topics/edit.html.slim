@@ -3,7 +3,14 @@ input#topic-editor-categories type="hidden" value='#{@categories}'
 
 = javascript_include_tag 'webpack/topics/edit.js'
 
+hr
+.text-title Thumbnail
 = form_for @topic, url: admin_topic_path, method: :put do |f|
-  = f.file_field :thumbnail, class: 'form-control'
-  = f.submit
+  .row
+    .col-md-8
+      .form-group
+        = f.file_field :thumbnail, class: 'form-control form-color-main'
+    .col-md-4
+      .form-group
+        = f.submit 'サムネイルを設定する', class: 'btn btn-submit'
 

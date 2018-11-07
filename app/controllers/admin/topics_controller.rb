@@ -1,7 +1,7 @@
 module Admin
   class TopicsController < Admin::ApplicationController
-    before_action :set_topic, only: [:edit]
-    before_action :set_categories, only: [:new, :edit]
+    before_action :set_topic, only: [:edit, :update]
+    before_action :set_categories, only: [:new, :edit, :update]
 
     def index
       if params[:topic_form].present?
@@ -24,6 +24,11 @@ module Admin
     end
 
     def update
+      if @topic.update(thumbnail: params[:topic][:thumbnail])
+        redirect_to edit_admin_topic_path(@topic)
+      else
+        render :edit
+      end
     end
 
     private
