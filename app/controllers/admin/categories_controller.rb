@@ -20,7 +20,6 @@ module Admin
     end
 
     def create
-      binding.pry
       @category = Category.new(category_params)
       if @category.save
         redirect_to admin_categories_path, notice: '保存に成功しました。'

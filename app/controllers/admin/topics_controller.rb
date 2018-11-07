@@ -24,7 +24,6 @@ module Admin
     end
 
     def update
-      binding.pry
     end
 
     private
