@@ -106,7 +106,7 @@
 
 
 /* tablet  */
-@media only screen and (min-width: 641px) and (max-width: 960px) {
+@media only screen and (min-width: 769px) and (max-width: 960px) {
   main.parent-category-main{
     display: grid;
     grid-template:
@@ -213,7 +213,7 @@
 
 
 /* smartPhone */
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 768px) {
   main.parent-category-main{
     display: grid;
     grid-template:
