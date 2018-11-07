@@ -15,7 +15,7 @@ header.header {
   }
 }
 /* tablet  */
-@media only screen and (min-width: 641px) and (max-width: 960px) {
+@media only screen and (min-width: 769px) and (max-width: 960px) {
   .background-border {
     border-right: 1px solid $fontNavyColor;
     height: 100%;
@@ -29,7 +29,7 @@ header.header {
 
 
 /* smartPhone */
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 768px) {
   .background-border {
     border-right: 1px solid $fontNavyColor;
     height: 100%;

@@ -69,7 +69,7 @@ a {
   }
 }
 
-@media only screen and (min-width: 641px) and (max-width: 960px) {
+@media only screen and (min-width: 769px) and (max-width: 960px) {
   .top-page {
     grid-template:
     'a a b b' 200px
@@ -80,7 +80,7 @@ a {
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 768px) {
   .top-page {
     background: #fff;
     display: grid;
