@@ -13,9 +13,9 @@ bundle exec ridgepole -c config/database.yml -E development --apply -f db/schema
 $ bundle exec rails s
 
 # react
-cd client 
-yarn install 
-tarn run build 
+cd front
+yarn install
+yarn run build
 yarn run watch
 
 ```

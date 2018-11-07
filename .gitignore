@@ -33,3 +33,6 @@ public/tmp/*
 
 Gemfile.lock
 .ruby-version
+
+front/node_modules
+front/yarn-error.log
