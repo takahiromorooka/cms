@@ -7,14 +7,14 @@ class EditorElementButton extends React.Component {
         super(props)
 
         this.state = {
-            image: '<div class="">' + "\n" +  '<img src="" alt="" />' + "\n" + '</div>' ,
-            head_l: '<h1 class="" >大見出し</h1>',
-            head_m: '<h2 class="">中見出し</h2>',
-            head_s: '<h3 class="">小見出し</h3>',
-            list: '<p>リストタイトル</p>' + "\n" + '<ul>' + "\n" + '<li>リスト</li>'+ "\n" + '</ul>',
-            blockquote: '<blockquote>' + "\n" + '<p>引用文言</p>' + "\n" + '<cite>引用URL</cite>' + "\n" + "</blockquote>",
+            image: '<div class="article-img-area item">' + "\n" + '<img src="" alt="" />' + "\n" + '</div>' ,
+            head_l: '<div id="目次用に番号を振ってください" class="article-big-heaher-area item">'+ "\n " +'<div class="text-huge back-front">Section番号を振ってください</div>'+ "\n " +'<h2 class="title text-navy" >大見出し</h2>'+ "\n" +'</div>',
+            head_m: '<div class="article-middle-header-area item">'+ "\n " +'<div class="text-huge back-front">SubSection</div>'+ "\n " +'<h3 class="title" >中見出し</h3>'+ "\n" +'</div>',
+            head_s: '<div class="article-small-header-area item">'+ "\n " +'<h4 class="text-bold">小見出し</h4></div>',
+            list: '<div class="article-list-area">'+ "\n" + '<p class="title text-bold text-ex-large">リストタイトル</p>' + "\n" + '<ul>' + "\n" + '<li>リスト</li>'+ "\n" + '<li>リスト</li>'+ "\n" + '<li>リスト</li>'+ "\n" + '</ul>'+ "\n" +'</div>',
+            blockquote: '<div class="article-quote-area item">' + "\n" +'<blockquote>' + "\n" + '<p>引用文言</p>' + "\n" + '<cite>引用URL</cite>' + "\n" + '</blockquote>'+ "\n" +'</div>',
             relation: '',
-            button: '<a href="URL" class="square_btn">' + 'ボタン' + '</a>',
+            button: '<div class="article-button-area item">' + "\n" + '<a href="URL" class="square_btn text-ex-large">' + 'ボタン' + '</a>' + "\n" + '</div>',
             relatedModal: false
         }
     }
