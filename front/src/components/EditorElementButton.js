@@ -1,5 +1,13 @@
 import React from 'react'
 import RelatedModal from "./RelatedModal";
+import styled from 'styled-components'
+
+const ElementButton = styled.div`
+        .btn-main {
+            margin-right: 10px;
+            margin-bottom: 20px;
+        }
+`
 
 
 class EditorElementButton extends React.Component {
@@ -37,7 +45,7 @@ class EditorElementButton extends React.Component {
 
     render() {
         return (
-            <div>
+            <ElementButton>
                 {this.state.relatedModal ?  <RelatedModal closeRelatedModal={() => this.closeRelatedModal()}
                                                           addStringToTextArea={(e) => this.addStringToTextArea(e)} /> : '' }
                 <input type="button" value='画像'
@@ -56,7 +64,7 @@ class EditorElementButton extends React.Component {
                        onClick={() => this.openRelatedModal()} className={'btn btn-main'}/>
                 <input type="button" value='ボタン'
                        onClick={() => this.addStringToTextArea(this.state.button)} className={'btn btn-main'}/>
-            </div>
+            </ElementButton>
         )
     }
 }
