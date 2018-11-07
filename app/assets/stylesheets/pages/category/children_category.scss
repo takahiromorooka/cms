@@ -1,6 +1,8 @@
 /* pc */
 @media screen and (min-width: 961px) {
   main.children-category-main {
+    width: 1030px;
+    margin: 0 auto;
     display: grid;
     grid-template:
       'info info info' auto
