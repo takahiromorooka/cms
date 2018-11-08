@@ -23,6 +23,7 @@ class EditorElementButton extends React.Component {
             blockquote: '<div class="article-quote-area item">' + "\n" +'<blockquote>' + "\n" + '<p>引用文言</p>' + "\n" + '<cite>引用URL</cite>' + "\n" + '</blockquote>'+ "\n" +'</div>',
             relation: '',
             button: '<div class="article-button-area item">' + "\n" + '<a href="URL" class="square_btn text-ex-large">' + 'ボタン' + '</a>' + "\n" + '</div>',
+            text: '<div class="article-text-area item"><p>テキスト</p></div>',
             relatedModal: false
         }
     }
@@ -64,6 +65,8 @@ class EditorElementButton extends React.Component {
                        onClick={() => this.openRelatedModal()} className={'btn btn-main'}/>
                 <input type="button" value='ボタン'
                        onClick={() => this.addStringToTextArea(this.state.button)} className={'btn btn-main'}/>
+                <input type="button" value='テキスト'
+                       onClick={() => this.addStringToTextArea(this.state.text)} className={'btn btn-main'}/>
             </ElementButton>
         )
     }
