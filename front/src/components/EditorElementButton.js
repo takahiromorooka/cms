@@ -23,7 +23,7 @@ class EditorElementButton extends React.Component {
             blockquote: '<div class="article-quote-area item">' + "\n" +'<blockquote>' + "\n" + '<p>引用文言</p>' + "\n" + '<cite>引用URL</cite>' + "\n" + '</blockquote>'+ "\n" +'</div>',
             relation: '',
             button: '<div class="article-button-area item">' + "\n" + '<a href="URL" class="square_btn text-ex-large">' + 'ボタン' + '</a>' + "\n" + '</div>',
-            text: '<div class="article-text-area item"><p>テキスト</p></div>',
+            text: '<div class="article-text-area item">' + "\n" + '<p>テキスト</p>' + "\n" + '</div>',
             relatedModal: false
         }
     }
