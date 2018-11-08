@@ -1,0 +1,6 @@
+aws:
+  iam:
+    access_key: AKIAIGYYLUP5BW65IMIQ
+    secret_access_key: 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
+  s3:
+    bucket_name:

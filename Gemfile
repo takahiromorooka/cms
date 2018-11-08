@@ -17,6 +17,8 @@ gem 'ridgepole'
 gem 'active_model_serializers'
 gem 'mini_magick'
 gem 'carrierwave', '~> 1.0'
+gem 'fog'
+gem 'config'
 gem 'ransack'
 gem 'kaminari'
 
