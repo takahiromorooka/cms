@@ -18,19 +18,7 @@
     section {
       grid-area: section;
       .children-category-area {
-        .children-category-title {
-          display: grid;
-          grid-template-columns: auto 1fr;
-          grid-template-rows: auto;
-          margin-left: 42px;
-          .grid-column-1 {
-            grid-column: 1;
-          }
 
-          .grid-column-2 {
-            grid-column: 2;
-          }
-        }
 
         .children-category-articles {
           display: grid;
@@ -126,19 +114,6 @@
     section {
       grid-area: section;
       .children-category-area {
-        .children-category-title {
-          display: grid;
-          grid-template-columns: auto 1fr;
-          grid-template-rows: auto;
-          margin-left: 42px;
-          .grid-column-1 {
-            grid-column: 1;
-          }
-
-          .grid-column-2 {
-            grid-column: 2;
-          }
-        }
 
         .children-category-articles {
         display: grid;
@@ -232,18 +207,6 @@
     section {
       grid-area: section;
       .children-category-area {
-        .children-category-title {
-          display: grid;
-          grid-template-columns: auto 1fr;
-          grid-template-rows: auto;
-          .grid-column-1 {
-            grid-column: 1;
-          }
-
-          .grid-column-2 {
-            grid-column: 2;
-          }
-        }
 
         .children-category-articles {
           display: grid;
