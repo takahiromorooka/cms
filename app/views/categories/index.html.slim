@@ -1,46 +1,28 @@
 main.parent-category-main
   .category-info-area
     h2.text-huge.text-navy Engineer
-    p.description こちらのページは、エンジニアのノウハウを中心に紹介しています。
+    p.description こちらのページは、エンジニアのノウハウを中心に紹介しています。入門から実践を兼ね備えた情報を発信していきます。
+
   section
     .children-category-area
-      .children-category-title
-        p.text-huge.grid-column-1 01
-        p.text-huge.grid-column-2 Ruby on Rails
+      p.text-huge Ruby on Rails
 
       .children-category-articles
-        .related-article
-          img[src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=43ef07555334a21b6c7dcecc929070ce&auto=format&fit=crop&w=1782&q=80"]
-          .title title
+        = link_to '/a/a/1' do
+          .related-article
+            img[src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=43ef07555334a21b6c7dcecc929070ce&auto=format&fit=crop&w=1782&q=80"]
+            h3.title title
 
-        .related-article
-          img[src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=43ef07555334a21b6c7dcecc929070ce&auto=format&fit=crop&w=1782&q=80"]
-          .title title
+        = link_to '/a/a/1' do
+          .related-article
+            img[src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=43ef07555334a21b6c7dcecc929070ce&auto=format&fit=crop&w=1782&q=80"]
+            h3.title title
 
-        .related-article
-          img[src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=43ef07555334a21b6c7dcecc929070ce&auto=format&fit=crop&w=1782&q=80"]
-          .title title
+        = link_to '/a/a/1' do
+          .related-article
+            img[src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=43ef07555334a21b6c7dcecc929070ce&auto=format&fit=crop&w=1782&q=80"]
+            h3.title title
 
-    .children-category-area
-      .children-category-title
-        p.text-huge.grid-column-1 02
-        p.text-huge.grid-column-2 python
-
-      .children-category-articles
-        .related-article
-          img[src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=43ef07555334a21b6c7dcecc929070ce&auto=format&fit=crop&w=1782&q=80"]
-          .title title
-          .description description
-
-        .related-article
-          img[src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=43ef07555334a21b6c7dcecc929070ce&auto=format&fit=crop&w=1782&q=80"]
-          .title title
-          .description description
-
-        .related-article
-          img[src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=43ef07555334a21b6c7dcecc929070ce&auto=format&fit=crop&w=1782&q=80"]
-          .title title
-          .description description
 
   aside
     == render partial: 'partials/sidebar'
