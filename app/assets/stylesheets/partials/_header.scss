@@ -1,41 +1,25 @@
 header.header {
-  background: $fontNavyColor;
+  // background: $fontNavyColor;
   width: 100%;
+
+  .logo{
+    background-image: url(/logo.png);
+    background-repeat: no-repeat;
+    height: 52px;
+    background-size: contain;
+    background-position: center;
+  }
 }
 
 /* pc */
 @media screen and (min-width: 961px) {
-  .background-border {
-    border-right: 1px solid $fontNavyColor;
-    height: 100%;
-    position: fixed;
-    left: 60px;
-    top: 40px;
-    z-index: -1;
-  }
+
 }
 /* tablet  */
 @media only screen and (min-width: 769px) and (max-width: 960px) {
-  .background-border {
-    border-right: 1px solid $fontNavyColor;
-    height: 100%;
-    position: fixed;
-    left: 60px;
-    top: 40px;
-    z-index: -1;
-  }
+
 }
-
-
 
 /* smartPhone */
 @media screen and (max-width: 768px) {
-  .background-border {
-    border-right: 1px solid $fontNavyColor;
-    height: 100%;
-    position: fixed;
-    left: 18px;
-    top: 0px;
-    z-index: -1;
-  }
 }

@@ -4,12 +4,16 @@ footer.footer
       | Category
     .category-list
        ul
-        li engineer
-        li design
-        li marketing
-        li bisiness
-        li managiment
+        li
+          = link_to 'engineer',category_path(category_alias: 'a')
+
+        li
+          = link_to 'marketing',category_path(category_alias: 'a')
+
+        li
+          = link_to 'bisiness',category_path(category_alias: 'a')
+
 
 
   .copyright-area
-   | Copyright ©logo All Rights Reserved.
+   | Copyright ©logisk All Rights Reserved.
